@@ -1,0 +1,272 @@
+[
+  {
+    "id": "readymade-garments-factory",
+    "title": "Readymade Garments Factory",
+    "category": "Manufacturing",
+    "description": "Establishment of a high-efficiency apparel production plant equipped with modern stitching, cutting, and finishing machinery. Focused on domestic supply chains and export-oriented garment manufacturing.",
+    "investment": "₹1.2 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "cold-storage-factory",
+    "title": "Cold Storage Factory",
+    "category": "Agriculture",
+    "description": "Multi-commodity cold storage facility designed to preserve agricultural perishables, fruits, and vegetables. Features advanced controlled atmosphere and cooling technologies for energy-efficient preservation.",
+    "investment": "₹2.8 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Madhya Pradesh", "Rajasthan"]
+  },
+  {
+    "id": "glass-furniture-factory",
+    "title": "Glass Furniture Factory",
+    "category": "Furniture",
+    "description": "A state-of-the-art manufacturing unit specializing in premium tempered, decorative, and architectural glass furniture for residential and corporate commercial spaces.",
+    "investment": "₹95 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "wooden-furniture-factory",
+    "title": "Wooden Furniture Factory",
+    "category": "Furniture",
+    "description": "Modern woodworking plant fabricating high-end modular office furniture, doors, home setups, and custom premium wooden interior items utilizing automated carving and finishing tools.",
+    "investment": "₹1.5 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Rajasthan", "Madhya Pradesh"]
+  },
+  {
+    "id": "steel-furniture-factory",
+    "title": "Steel Furniture Factory",
+    "category": "Furniture",
+    "description": "Industrial production line for heavy-duty, durable steel wardrobes, filing systems, institutional furniture, and custom retail displays, using automated sheet metal fabrication.",
+    "investment": "₹1.1 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "mini-multi-oil-food-factory",
+    "title": "Mini Multi Oil Food Factory",
+    "category": "Food Processing",
+    "description": "Multi-seed oil extraction and refining plant producing premium mustard, groundnut, and sesame oils. Includes integrated modern filtration and automated packaging systems.",
+    "investment": "₹85 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Rajasthan"]
+  },
+  {
+    "id": "cement-block-factory",
+    "title": "Cement Block Factory",
+    "category": "Infrastructure",
+    "description": "Automated plant producing eco-friendly, high-strength concrete fly-ash bricks, solid blocks, and interlocking pavers to supply rapidly growing local infrastructure markets.",
+    "investment": "₹90 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Madhya Pradesh", "Rajasthan"]
+  },
+  {
+    "id": "stevia-sugar-production",
+    "title": "Stevia Sugar Production",
+    "category": "Food Processing",
+    "description": "An agro-processing plant focused on extracting and refining natural stevia leaves into zero-calorie organic sweeteners, serving the healthy lifestyle consumer segment.",
+    "investment": "₹1.8 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "ms-fabrication-factory",
+    "title": "MS Fabrication Factory",
+    "category": "Manufacturing",
+    "description": "Mild steel fabrication workshop constructing pre-engineered building components, industrial grates, trusses, and custom steel structures for engineering applications.",
+    "investment": "₹95 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Maharashtra", "Madhya Pradesh"]
+  },
+  {
+    "id": "ev-vehicle-converter-factory",
+    "title": "EV Vehicle Converter Factory",
+    "category": "Technology",
+    "description": "Advanced workshop converting conventional internal combustion engine (ICE) two and three-wheelers into eco-friendly electric vehicles, featuring quality-approved conversion kits.",
+    "investment": "₹2.2 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "electrical-electronics-manufacturing",
+    "title": "Electrical & Electronics Manufacturing",
+    "category": "Technology",
+    "description": "Precision assembly facility for premium smart LED lighting products, smart switches, circuit breakers, and consumer-grade home automation components.",
+    "investment": "₹1.6 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "cow-milk-ice-cream-factory",
+    "title": "Cow Milk Ice Cream Factory",
+    "category": "Food Processing",
+    "description": "Dairy processing facility manufacturing premium, organic cow milk ice cream, yogurts, and butter. Features cold chain logistics integration and automated packaging line.",
+    "investment": "₹1.3 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Madhya Pradesh", "Gujarat"]
+  },
+  {
+    "id": "ev-call-centre",
+    "title": "EV Call Centre",
+    "category": "Technology",
+    "description": "A high-tech digital helpdesk and support facility catering exclusively to EV fleet tracking, battery-swapping support, emergency roadside assistance, and customer queries.",
+    "investment": "₹85 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Maharashtra", "Rajasthan"]
+  },
+  {
+    "id": "aluminium-furniture-factory",
+    "title": "Aluminium Furniture Factory",
+    "category": "Furniture",
+    "description": "Modern lightweight furniture manufacturing unit specializing in rust-proof, fire-resistant aluminium kitchen cabinets, wardrobe shutters, and outdoor furniture solutions.",
+    "investment": "₹1.0 Crore",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "equipment-instrument-trading",
+    "title": "Equipment & Instrument Trading",
+    "category": "Trading",
+    "description": "B2B trading hub supplying certified lab equipment, industrial testing instruments, and precision sensors to pharmaceutical, engineering, and educational sectors.",
+    "investment": "₹90 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "40-room-hotel-project",
+    "title": "40 Room Hotel Project",
+    "category": "Hospitality",
+    "description": "Premium mid-scale boutique hotel development featuring 40 deluxe rooms, banquet halls, boardrooms, and modern amenities catering to business travelers and tourists.",
+    "investment": "₹3.5 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Rajasthan", "Gujarat"]
+  },
+  {
+    "id": "veg-restaurant",
+    "title": "Veg Restaurant",
+    "category": "Hospitality",
+    "description": "Fine-dine pure vegetarian restaurant highlighting global and local cuisines, designed with contemporary aesthetics, fully equipped kitchen, and high-footfall location.",
+    "investment": "₹95 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Rajasthan"]
+  },
+  {
+    "id": "veg-nonveg-restaurant",
+    "title": "Veg & Non-Veg Restaurant",
+    "category": "Hospitality",
+    "description": "Premium multi-cuisine restaurant serving both vegetarian and non-vegetarian menus, complete with distinct family dining sections and state-of-the-art smart kitchen gear.",
+    "investment": "₹1.2 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Maharashtra", "Madhya Pradesh"]
+  },
+  {
+    "id": "aquaponic-smart-farming",
+    "title": "Aquaponic Smart Farming",
+    "category": "Agriculture",
+    "description": "Sustainable agriculture project combining aquaculture (fish farming) with hydroponics (growing plants in water) in a closed-loop recirculating automated smart greenhouse.",
+    "investment": "₹1.4 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "papad-manufacturing-cluster",
+    "title": "Papad Manufacturing Cluster",
+    "category": "Food Processing",
+    "description": "High-volume, semi-automated food cluster for traditional and premium spiced papad dough preparation, sheeting, hygienic solar drying, and vacuum packaging.",
+    "investment": "₹85 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Rajasthan", "Madhya Pradesh"]
+  },
+  {
+    "id": "film-shooting-studio",
+    "title": "Film Shooting Studio & Editing",
+    "category": "Hospitality",
+    "description": "Modern creative hub offering soundproof indoor shooting floors, premium chroma-key sets, luxury green rooms, and post-production video and audio editing suites.",
+    "investment": "₹3.0 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Maharashtra", "Gujarat"]
+  },
+  {
+    "id": "it-app-development-institute",
+    "title": "IT App Development Institute",
+    "category": "Technology",
+    "description": "State-of-the-art vocational academy offering advanced practical training in mobile app coding, web stacks, machine learning, and UI/UX design concepts.",
+    "investment": "₹90 Lakhs",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Rajasthan"]
+  },
+  {
+    "id": "marketing-software-development",
+    "title": "Marketing Software Development",
+    "category": "Technology",
+    "description": "Tech lab producing enterprise-level SaaS solutions for marketing automation, customer data platforms, analytics dashboards, and multi-channel drip campaign managers.",
+    "investment": "₹1.5 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Maharashtra", "Gujarat"]
+  },
+  {
+    "id": "nbfc-finance-management",
+    "title": "NBFC Finance Management",
+    "category": "Finance",
+    "description": "Professional consulting and fintech branch assisting businesses in NBFC licensing, debt structuring, venture equity facilitation, and structured working capital loans.",
+    "investment": "₹2.5 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "mineral-water-plant",
+    "title": "Mineral Water Plant",
+    "category": "Food Processing",
+    "description": "High-capacity water purification and bottling plant featuring multi-stage reverse osmosis, ozonisation, UV treatment, and automatic PET bottle blowing and sealing.",
+    "investment": "₹1.1 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Madhya Pradesh"]
+  },
+  {
+    "id": "soft-drink-manufacturing-plant",
+    "title": "Soft Drink Manufacturing Plant",
+    "category": "Food Processing",
+    "description": "Beverage production unit formulating carbonated drinks, juices, and health mocktails. Outfitted with automatic blending tanks, carbonators, and high-speed canning lines.",
+    "investment": "₹1.7 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "mini-township-development",
+    "title": "Mini Township Development",
+    "category": "Infrastructure",
+    "description": "Premium industrial housing and commercial layout project offering modern roads, drainage grids, green corridors, and smart utility hubs for corporate workforces.",
+    "investment": "₹3.5 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Gujarat", "Maharashtra"]
+  },
+  {
+    "id": "gold-silver-ornament-manufacturing",
+    "title": "Gold & Silver Ornament Manufacturing",
+    "category": "Manufacturing",
+    "description": "Bespoke jewelry manufacturing workshop using laser soldering, 3D printing molds, and automated casting tools to craft high-finish gold and silver ornaments.",
+    "investment": "₹2.0 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Rajasthan", "Gujarat"]
+  },
+  {
+    "id": "fruit-vegetable-powder-processing",
+    "title": "Fruit & Vegetable Powder Processing",
+    "category": "Food Processing",
+    "description": "Dehydration and spray-drying processing unit converting raw fruits and vegetables into nutrient-rich soluble powders for food, pharma, and cosmetic applications.",
+    "investment": "₹1.4 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Madhya Pradesh", "Gujarat"]
+  },
+  {
+    "id": "egg-farming",
+    "title": "Egg Farming",
+    "category": "Agriculture",
+    "description": "Modern layer poultry farming project implementing automated feeding, watering, temperature control, and egg grading lines, operating under strict hygienic standards.",
+    "investment": "₹1.3 Crores",
+    "plotSize": "5,000 sq.ft.",
+    "states": ["Rajasthan", "Madhya Pradesh"]
+  }
+]
