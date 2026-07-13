@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useCountUp } from '../../../hooks/useCountUp';
+import { useLanguage } from '../../../context/LanguageContext';
 
 const StatsSection = () => {
+  const { t } = useLanguage();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -14,9 +16,9 @@ const StatsSection = () => {
   const capitalCount = useCountUp(250, 2000, inView);
 
   const stats = [
-    { id: 1, name: 'Consulted Setup Layouts', value: setupCount, suffix: '+' },
-    { id: 2, name: 'Active Corporate Promoters', value: promoterCount, suffix: '+' },
-    { id: 3, name: 'Capital Facilitation', value: `₹${capitalCount}Cr`, suffix: '+' },
+    { id: 1, name: t('stats.layouts'), value: setupCount, suffix: '+' },
+    { id: 2, name: t('stats.promoters'), value: promoterCount, suffix: '+' },
+    { id: 3, name: t('stats.capital'), value: `₹${capitalCount}`, suffix: t('estimator.crores') === 'Crores' ? 'Cr+' : ` ${t('estimator.crores')}+` },
   ];
 
   return (

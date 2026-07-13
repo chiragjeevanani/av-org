@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Target, Eye, Compass, Award, TrendingUp } from "lucide-react";
+import { useLanguage } from "../../../context/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-24 lg:py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -11,30 +14,30 @@ export default function About() {
           {/* Left: Heading & Intro */}
           <div className="lg:col-span-6 space-y-6">
             <span className="text-[#F59E0B] font-bold uppercase tracking-[0.2em] text-xs block mb-2">
-              Corporate Profile
+              {t('about.badge')}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-[#0A2463] leading-tight">
-              World Export Business Housing Centre
+              {t('about.title')}
             </h2>
             <p className="text-slate-500 text-sm italic font-medium leading-none">
-              "Connecting Businesses, Building Futures"
+              {t('about.tagline')}
             </p>
             <p className="text-slate-600 leading-relaxed text-sm">
-              We are a premier industrial project development, setup advisory, and business consultancy firm. We bridge the gap between ambitious entrepreneurs, industrial groups, and investment institutions. We identify high-potential sectors and deliver end-to-end guidance from site acquisition to full commercial operations.
+              {t('about.description')}
             </p>
 
             <div className="grid sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
               <div className="flex items-center space-x-2">
                 <Compass className="h-4 w-4 text-[#F59E0B]" />
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">Turnkey Support</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{t('about.turnkey')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <TrendingUp className="h-4 w-4 text-[#F59E0B]" />
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">Growth Models</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{t('about.growth')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Award className="h-4 w-4 text-[#F59E0B]" />
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">Transparency</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{t('about.transparency')}</span>
               </div>
             </div>
           </div>
@@ -46,10 +49,10 @@ export default function About() {
                 <div className="p-2.5 bg-blue-50 rounded-lg text-primary">
                   <Eye className="h-5 w-5" />
                 </div>
-                <h4 className="font-bold text-[#0A2463] font-heading text-base">Our Vision</h4>
+                <h4 className="font-bold text-[#0A2463] font-heading text-base">{t('about.visionTitle')}</h4>
               </div>
               <p className="text-slate-600 text-xs leading-relaxed">
-                To turn the four target states of Western and Central India into thriving hubs of production and logistics, bringing world-class infrastructure within reach of regional entrepreneurs.
+                {t('about.visionText')}
               </p>
             </div>
 
@@ -58,10 +61,10 @@ export default function About() {
                 <div className="p-2.5 bg-amber-50 rounded-lg text-[#F59E0B]">
                   <Target className="h-5 w-5" />
                 </div>
-                <h4 className="font-bold text-[#0A2463] font-heading text-base">Our Mission</h4>
+                <h4 className="font-bold text-[#0A2463] font-heading text-base">{t('about.missionTitle')}</h4>
               </div>
               <p className="text-slate-600 text-xs leading-relaxed">
-                To assist investors in successfully deploying capital between ₹85 Lakhs and ₹3.5 Crores into verified industrial sectors, providing risk mitigation, financial support, and turnkey setups.
+                {t('about.missionText')}
               </p>
             </div>
           </div>

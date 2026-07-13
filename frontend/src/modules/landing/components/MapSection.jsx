@@ -1,48 +1,49 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Globe, CheckCircle2, Navigation } from 'lucide-react';
-
-const stateData = [
-  {
-    name: "Gujarat",
-    capital: "Gandhinagar",
-    growth: "12.8%",
-    opportunities: "High-density chemical, textile, and machinery manufacturing zones.",
-    manufacturingGrowth: "Strong infrastructure featuring smart GIDC layouts and rapid cargo lanes.",
-    investmentFriendly: "Ranked top in national Ease of Doing Business index.",
-    financeSupport: "Direct integration with state industrial finance corporations and subsidies."
-  },
-  {
-    name: "Maharashtra",
-    capital: "Mumbai",
-    growth: "11.2%",
-    opportunities: "Automotive engineering, electronics, pharma, and global port links.",
-    manufacturingGrowth: "Expansive MIDC zones with continuous power grids.",
-    investmentFriendly: "Extensive single-window portals for quick clearances.",
-    financeSupport: "Empanelled with leading capital consortiums and bank headquarters."
-  },
-  {
-    name: "Madhya Pradesh",
-    capital: "Bhopal",
-    growth: "9.5%",
-    opportunities: "Agro-processing clusters, food parks, and rich mineral fabrication.",
-    manufacturingGrowth: "Central logistics node allowing fast transit to all national markets.",
-    investmentFriendly: "Favorable land bank acquisition policies with friendly labor laws.",
-    financeSupport: "Capital subsidies and special interest subventions for food processing."
-  },
-  {
-    name: "Rajasthan",
-    capital: "Jaipur",
-    growth: "10.4%",
-    opportunities: "Stone processing, handicrafts, solar parks, and wooden furniture.",
-    manufacturingGrowth: "Rapidly expanding RIICO estates along the Delhi-Mumbai Corridor.",
-    investmentFriendly: "Special investment incentives (RIPS) for export-oriented manufacturers.",
-    financeSupport: "Subsidies targeting traditional crafts, solar setups, and packaging."
-  }
-];
+import { useLanguage } from '../../../context/LanguageContext';
 
 const MapSection = () => {
-  const [activeState, setActiveState] = useState(stateData[0]);
+  const { t } = useLanguage();
+
+  const stateData = [
+    {
+      id: "gujarat",
+      name: t('map.states.gujarat.name'),
+      growth: "12.8%",
+      opportunities: t('map.states.gujarat.opportunities'),
+      manufacturingGrowth: t('map.states.gujarat.infra'),
+      investmentFriendly: t('map.states.gujarat.clearance')
+    },
+    {
+      id: "maharashtra",
+      name: t('map.states.maharashtra.name'),
+      growth: "11.2%",
+      opportunities: t('map.states.maharashtra.opportunities'),
+      manufacturingGrowth: t('map.states.maharashtra.infra'),
+      investmentFriendly: t('map.states.maharashtra.clearance')
+    },
+    {
+      id: "madhya_pradesh",
+      name: t('map.states.madhya_pradesh.name'),
+      growth: "9.5%",
+      opportunities: t('map.states.madhya_pradesh.opportunities'),
+      manufacturingGrowth: t('map.states.madhya_pradesh.infra'),
+      investmentFriendly: t('map.states.madhya_pradesh.clearance')
+    },
+    {
+      id: "rajasthan",
+      name: t('map.states.rajasthan.name'),
+      growth: "10.4%",
+      opportunities: t('map.states.rajasthan.opportunities'),
+      manufacturingGrowth: t('map.states.rajasthan.infra'),
+      investmentFriendly: t('map.states.rajasthan.clearance')
+    }
+  ];
+
+  // We find the matching active state dynamically on language switch
+  const [activeStateId, setActiveStateId] = useState(stateData[0].id);
+  const activeState = stateData.find(s => s.id === activeStateId) || stateData[0];
 
   return (
     <section id="states" className="py-24 lg:py-32 bg-white relative overflow-hidden">
@@ -58,7 +59,7 @@ const MapSection = () => {
               transition={{ duration: 0.5 }}
               className="text-[#F59E0B] font-bold uppercase tracking-[0.25em] text-[10px] mb-6"
             >
-              Territorial Scope
+              {t('map.badge')}
             </motion.div>
             
             <motion.h2
@@ -68,7 +69,8 @@ const MapSection = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-[#0A2463] leading-[1.1] mb-8 tracking-tighter"
             >
-              Priority Industrial <br /> Zones & Coverage.
+              {t('map.title')} <br />
+              {t('map.titleSub')}
             </motion.h2>
             
             <motion.p
@@ -78,7 +80,7 @@ const MapSection = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base text-slate-500 leading-relaxed mb-12 font-medium"
             >
-              We provide localized field surveys, site validation, and administrative coordination inside the core industrial corridors of Western and Central India.
+              {t('map.description')}
             </motion.p>
 
             <motion.div
@@ -90,11 +92,11 @@ const MapSection = () => {
             >
               <div className="border-l-4 border-[#0A2463] pl-6">
                 <div className="text-4xl font-black font-heading text-[#0A2463] mb-1 tracking-tight">4</div>
-                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Active States</div>
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('map.activeStates')}</div>
               </div>
               <div className="border-l-4 border-slate-100 pl-6">
                 <div className="text-4xl font-black font-heading text-[#0A2463] mb-1 tracking-tight">28+</div>
-                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Industrial Hubs</div>
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('map.industrialHubs')}</div>
               </div>
             </motion.div>
           </div>
@@ -106,10 +108,10 @@ const MapSection = () => {
             <div className="flex flex-row md:flex-col gap-2 w-full md:w-1/3 shrink-0 overflow-x-auto pb-4 md:pb-0">
               {stateData.map((st) => (
                 <button
-                  key={st.name}
-                  onClick={() => setActiveState(st)}
+                  key={st.id}
+                  onClick={() => setActiveStateId(st.id)}
                   className={`w-full text-left px-5 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider border transition-all duration-300 flex items-center justify-between shrink-0 ${
-                    activeState.name === st.name 
+                    activeState.id === st.id 
                       ? "bg-[#0A2463] text-white border-[#0A2463] shadow-md"
                       : "bg-white text-slate-600 border-slate-200 hover:bg-slate-100"
                   }`}
@@ -125,7 +127,7 @@ const MapSection = () => {
               
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={activeState.name}
+                  key={activeState.id}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -137,28 +139,28 @@ const MapSection = () => {
                       {activeState.name}
                     </h3>
                     <span className="text-[10px] bg-emerald-50 text-emerald-600 border border-emerald-100 px-2 py-0.5 rounded font-bold uppercase">
-                      GDDP Growth: {activeState.growth}
+                      {t('map.gddpGrowth')}: {activeState.growth}
                     </span>
                   </div>
 
                   <div className="space-y-3 text-xs leading-relaxed text-slate-600">
                     <div>
                       <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">
-                        Opportunities
+                        {t('map.opportunities')}
                       </span>
                       <p className="mt-0.5">{activeState.opportunities}</p>
                     </div>
 
                     <div>
                       <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">
-                        Infrastructure Growth
+                        {t('map.infraGrowth')}
                       </span>
                       <p className="mt-0.5">{activeState.manufacturingGrowth}</p>
                     </div>
 
                     <div>
                       <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">
-                        Clearance & Support
+                        {t('map.clearanceSupport')}
                       </span>
                       <p className="mt-0.5">{activeState.investmentFriendly}</p>
                     </div>
@@ -167,7 +169,7 @@ const MapSection = () => {
               </AnimatePresence>
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 font-bold uppercase tracking-wider">
-                <span>Capital Support Available</span>
+                <span>{t('map.capitalAvailable')}</span>
                 <CheckCircle2 className="h-4 w-4 text-emerald-500" />
               </div>
 

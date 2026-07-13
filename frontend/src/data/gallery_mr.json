@@ -1,0 +1,65 @@
+[
+  {
+    "id": "gallery-1",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
+    "category": "Corporate Branding",
+    "title": "अधिकृत कॉर्पोरेट ओळख",
+    "description": "जागतिक औद्योगिक पोहोच आणि व्यवसाय एकात्मतेचे प्रतिनिधित्व करणारा वर्ल्ड एक्सपोर्ट बिझनेस हाउसिंग सेंटरचा लोगो."
+  },
+  {
+    "id": "gallery-2",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
+    "category": "Logistics & Fleet",
+    "title": "कॉर्पोरेट ट्रान्झिट फ्लीट डिझाइन",
+    "description": "देशांतर्गत वाहतूक आणि औद्योगिक वाहन ताफा व्यवस्थापनासाठी आधुनिक वाहन रॅपिंग आणि लॉजिस्टिक्स डिझाइन."
+  },
+  {
+    "id": "gallery-3",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
+    "category": "Global Operations",
+    "title": "आंतरराष्ट्रीय व्यवसाय नेटवर्क",
+    "description": "सीमापार व्यवसाय सल्लामसलत, निर्यात क्षमता आणि व्यापार मार्ग अधोरेखित करणारे व्यापार ध्वज एकत्रीकरण प्रतिनिधित्व."
+  },
+  {
+    "id": "gallery-4",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
+    "category": "Corporate Branding",
+    "title": "डार्क थीम एक्झिक्युटिव्ह ब्रँडमार्क",
+    "description": "एक्झिक्युटिव्ह ब्रँडिंग, ऑफिसचे प्रवेशद्वार आणि बोर्डरूम डिस्प्लेसाठी प्रीमियम डार्क बॅकग्राउंडवर सेट केलेला लोगो."
+  },
+  {
+    "id": "gallery-5",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
+    "category": "Global Operations",
+    "title": "राष्ट्रीय ध्वज सहयोग",
+    "description": "प्रमुख युरोपीय, आशियाई, अमेरिकन आणि आखाती भागीदार देशांमधील धोरणात्मक भागीदारी दर्शवणारे व्यापार ध्वज."
+  },
+  {
+    "id": "gallery-6",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
+    "category": "Corporate Branding",
+    "title": "उच्च रिझोल्यूशनचे प्रतीक",
+    "description": "एकत्रित सल्लागार सेवांतर्गत शहरी पायाभूत सुविधा आणि जागतिक व्यापार गतीशीलता दर्शवणारे मुख्य प्रतीक."
+  },
+  {
+    "id": "gallery-7",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
+    "category": "Global Operations",
+    "title": "जागतिक व्यापार कॉरिडॉरचे प्रतिनिधित्व",
+    "description": "स्थानिक औद्योगिक केंद्रांपासून आंतरराष्ट्रीय बाजारपेठांपर्यंत वर्ल्ड एक्सपोर्टच्या पोहोचेचे दृश्य सादरीकरण."
+  }
+]

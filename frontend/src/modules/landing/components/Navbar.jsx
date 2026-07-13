@@ -3,10 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../../../lib/utils';
 import logo from '/WhatsApp Image 2026-07-07 at 11.52.09.jpeg';
+import { useLanguage } from '../../../context/LanguageContext';
+import LanguageSwitcher from '../../../components/LanguageSwitcher';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,16 +41,16 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Why Us', href: '#why-choose-us' },
-    { name: 'Finance', href: '#finance' },
-    { name: 'States', href: '#states' },
-    { name: 'Industries', href: '#industries' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { key: 'home', href: '#home' },
+    { key: 'about', href: '#about' },
+    { key: 'projects', href: '#projects' },
+    { key: 'whyUs', href: '#why-choose-us' },
+    { key: 'finance', href: '#finance' },
+    { key: 'states', href: '#states' },
+    { key: 'industries', href: '#industries' },
+    { key: 'gallery', href: '#gallery' },
+    { key: 'faq', href: '#faq' },
+    { key: 'contact', href: '#contact' },
   ];
 
   return (
@@ -76,10 +79,10 @@ const Navbar = () => {
               "text-sm md:text-base font-heading font-black tracking-tight transition-colors whitespace-nowrap uppercase leading-none",
               scrolled ? "text-[#0A2463]" : "text-[#0A2463]"
             )}>
-              World Export
+              {t('nav.brandName')}
             </span>
             <span className="text-[9px] text-[#F59E0B] font-bold tracking-widest uppercase leading-none mt-1">
-              Business Housing Centre
+              {t('nav.brandSubtitle')}
             </span>
           </div>
         </a>
@@ -88,7 +91,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <a 
-              key={link.name} 
+              key={link.key} 
               href={link.href} 
               className={cn(
                 "text-xs font-bold uppercase tracking-wider transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#F59E0B] after:transition-all hover:after:w-full",
@@ -98,26 +101,30 @@ const Navbar = () => {
               )}
               onClick={(e) => handleLinkClick(e, link.href)}
             >
-              {link.name}
+              {t(`nav.${link.key}`)}
             </a>
           ))}
+          <LanguageSwitcher />
           <a
             href="#contact"
             className="px-5 py-2.5 bg-[#0A2463] text-white hover:bg-[#F59E0B] hover:text-[#0F172A] rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md"
             onClick={(e) => handleLinkClick(e, '#contact')}
           >
-            Consult Now
+            {t('nav.consultNow')}
           </a>
         </div>
 
-        {/* Mobile menu toggle */}
-        <button
-          className="lg:hidden p-2 text-[#0A2463] relative z-[60]"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <LanguageSwitcher />
+          <button
+            className="p-2 text-[#0A2463] relative z-[60]"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -133,7 +140,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-4 px-6 mt-4">
               {navLinks.map((link, i) => (
                 <motion.div
-                  key={link.name}
+                  key={link.key}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.04 }}
@@ -143,7 +150,7 @@ const Navbar = () => {
                     className="text-base font-heading font-bold text-slate-800 hover:text-[#F59E0B] transition-colors block py-1 border-b border-slate-50"
                     onClick={(e) => handleLinkClick(e, link.href)}
                   >
-                    {link.name}
+                    {t(`nav.${link.key}`)}
                   </a>
                 </motion.div>
               ))}
@@ -153,7 +160,7 @@ const Navbar = () => {
                   className="block text-center px-5 py-3 bg-[#0A2463] text-white rounded-xl text-xs font-bold uppercase tracking-widest"
                   onClick={(e) => handleLinkClick(e, '#contact')}
                 >
-                  Consult Now
+                  {t('nav.consultNow')}
                 </a>
               </div>
             </div>

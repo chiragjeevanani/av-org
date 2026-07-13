@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, ArrowRight, ShieldCheck } from 'lucide-react';
 import logoEmblem from '/WhatsApp Image 2026-07-07 at 11.51.59.jpeg';
+import { useLanguage } from '../../../context/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   const handleScroll = (e, href) => {
     e.preventDefault();
     const element = document.querySelector(href);
@@ -38,7 +41,7 @@ const HeroSection = () => {
             >
               <ShieldCheck className="w-4 h-4 text-[#F59E0B]" />
               <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                Government Certified Industrial Consultancy
+                {t('hero.badge')}
               </span>
             </motion.div>
           </div>
@@ -49,8 +52,8 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-[32px] sm:text-5xl md:text-6xl lg:text-7xl font-black font-heading text-[#0A2463] leading-[1.15] mb-6 tracking-tighter"
           >
-            Building Tomorrow's <br className="hidden sm:inline" />
-            <span className="text-[#F59E0B] italic">Industries</span> & Futures
+            {t('hero.title')} <br className="hidden sm:inline" />
+            <span className="text-[#F59E0B] italic">{t('hero.titleItalic')}</span>{t('hero.titleAnd')}
           </motion.h1>
 
           <motion.p
@@ -59,7 +62,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm sm:text-lg md:text-xl text-slate-600 mb-10 max-w-[280px] sm:max-w-xl mx-auto lg:mx-0 font-body leading-relaxed"
           >
-            Helping entrepreneurs build and launch manufacturing businesses across Gujarat, Maharashtra, Madhya Pradesh & Rajasthan. Turnkey guidance from project selection to setup.
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.div
@@ -72,14 +75,14 @@ const HeroSection = () => {
               onClick={(e) => handleScroll(e, '#projects')}
               className="w-full sm:w-auto px-8 py-4 bg-[#0A2463] hover:bg-[#071c4d] text-white rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 group shadow-xl shadow-blue-900/10"
             >
-              Explore Projects
+              {t('hero.btnProjects')}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={(e) => handleScroll(e, '#contact')}
               className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-100 rounded-full font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 group"
             >
-              Contact Advisory
+              {t('hero.btnContact')}
               <ChevronRight className="w-4 h-4" />
             </button>
           </motion.div>
@@ -120,7 +123,7 @@ const HeroSection = () => {
         className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-50 cursor-pointer"
         onClick={(e) => handleScroll(e, '#about')}
       >
-        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Scroll</span>
+        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{t('hero.scroll')}</span>
         <div className="w-[1px] h-8 bg-slate-300" />
       </motion.div>
     </section>

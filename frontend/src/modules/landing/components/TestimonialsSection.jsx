@@ -1,37 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
-
-const testimonials = [
-  {
-    id: 1,
-    name: 'Dilip Patel',
-    role: 'Managing Director, Cold Chain Solutions',
-    state: 'Gujarat',
-    text: "World Export's team guided us from conceptualizing our Cold Storage factory to acquiring land in Gandhinagar. They prepared the Detailed Project Report which helped us secure a ₹2.2 Crore bank term loan smoothly.",
-    rating: 5
-  },
-  {
-    id: 2,
-    name: 'Sanjay Deshmukh',
-    role: 'Promoter, Garment Kraft Industry',
-    state: 'Maharashtra',
-    text: "The Single Window Clearance guidance provided by World Export was invaluable. They coordinated all permissions including the MPCB NOC and factory license, launching our readymade apparel unit in record time.",
-    rating: 5
-  },
-  {
-    id: 3,
-    name: 'Amit Rajawat',
-    role: 'Founder, SteviaSweet Processing',
-    state: 'Madhya Pradesh',
-    text: "We deployed ₹1.8 Crores into Stevia Sugar Extraction. The team helped us secure MSME subsidies under the MP state scheme, saving us substantial interest overheads. Highly recommended industrial advisory.",
-    rating: 5
-  }
-];
+import { useLanguage } from '../../../context/LanguageContext';
 
 const TestimonialsSection = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+
+  const testimonials = Array.from({ length: 3 }).map((_, idx) => ({
+    id: idx + 1,
+    name: t(`testimonials.items.${idx}.name`),
+    role: t(`testimonials.items.${idx}.role`),
+    state: t(`testimonials.items.${idx}.state`),
+    text: t(`testimonials.items.${idx}.text`),
+    rating: 5
+  }));
 
   const slideVariants = {
     enter: (direction) => ({
@@ -60,7 +44,7 @@ const TestimonialsSection = () => {
     });
   };
 
-  const active = testimonials[currentIndex];
+  const active = testimonials[currentIndex] || testimonials[0];
 
   return (
     <section id="testimonials" className="py-24 lg:py-32 bg-[#F9FAFB] relative overflow-hidden">
@@ -69,10 +53,10 @@ const TestimonialsSection = () => {
         {/* Heading */}
         <div className="text-center mb-16">
           <span className="text-[#F59E0B] font-bold uppercase tracking-widest text-xs block mb-4">
-            Testimonials
+            {t('testimonials.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-[#0A2463] tracking-tighter">
-            What Our Promoters Say
+            {t('testimonials.title')}
           </h2>
         </div>
 

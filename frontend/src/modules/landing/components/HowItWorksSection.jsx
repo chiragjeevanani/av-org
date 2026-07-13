@@ -1,29 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SearchCode, FileCheck, Factory } from 'lucide-react';
-
-const steps = [
-  {
-    icon: <SearchCode className="w-8 h-8 text-[#0A2463]" />,
-    title: 'Select Project Concept',
-    description: 'Choose from 30 pre-vetted industrial profiles matching your budget between ₹85 Lakhs & ₹3.5 Crores.',
-    color: 'bg-blue-50',
-  },
-  {
-    icon: <FileCheck className="w-8 h-8 text-[#0A2463]" />,
-    title: 'Capital & Bank Tie-up',
-    description: 'We draft Bankable Detailed Project Reports and process applications for term loans and subsidies.',
-    color: 'bg-blue-50',
-  },
-  {
-    icon: <Factory className="w-8 h-8 text-[#F59E0B]" />,
-    title: 'Land Allocation & Setup',
-    description: 'Secure plots inside state industrial estates and carry out machine trials and commercial runs.',
-    color: 'bg-amber-100',
-  },
-];
+import { useLanguage } from '../../../context/LanguageContext';
 
 const HowItWorksSection = () => {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      icon: <SearchCode className="w-8 h-8 text-[#0A2463]" />,
+      title: t('howItWorks.steps.0.title'),
+      description: t('howItWorks.steps.0.description'),
+      color: 'bg-blue-50',
+    },
+    {
+      icon: <FileCheck className="w-8 h-8 text-[#0A2463]" />,
+      title: t('howItWorks.steps.1.title'),
+      description: t('howItWorks.steps.1.description'),
+      color: 'bg-blue-50',
+    },
+    {
+      icon: <Factory className="w-8 h-8 text-[#F59E0B]" />,
+      title: t('howItWorks.steps.2.title'),
+      description: t('howItWorks.steps.2.description'),
+      color: 'bg-amber-100',
+    },
+  ];
+
   return (
     <section id="how-it-works" className="py-24 lg:py-32 bg-white relative">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -35,7 +38,7 @@ const HowItWorksSection = () => {
             transition={{ duration: 0.5 }}
             className="text-[#F59E0B] font-bold uppercase tracking-widest text-xs mb-4"
           >
-            How It Works
+            {t('howItWorks.badge')}
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -44,8 +47,8 @@ const HowItWorksSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-[#0A2463] leading-tight"
           >
-            Launch your setup in <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A2463] to-[#F59E0B]">3 simple stages</span>
+            {t('howItWorks.title')} <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0A2463] to-[#F59E0B]">{t('howItWorks.titleGradient')}</span>
           </motion.h2>
         </div>
 

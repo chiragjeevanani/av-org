@@ -1,20 +1,23 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import logo from '/WhatsApp Image 2026-07-07 at 11.52.09.jpeg';
+import { useLanguage } from '../../../context/LanguageContext';
 
 const FooterSection = () => {
+  const { t } = useLanguage();
+
   const navigationLinks = [
-    { name: 'About Profile', href: '#about' },
-    { name: 'Project Showcase', href: '#projects' },
-    { name: 'Finance Subsidies', href: '#finance' },
-    { name: 'Target Regions', href: '#states' },
+    { name: t('nav.aboutProfile'), href: '#about' },
+    { name: t('nav.projectShowcase'), href: '#projects' },
+    { name: t('nav.financeSubsidies'), href: '#finance' },
+    { name: t('nav.targetRegions'), href: '#states' },
   ];
 
   const industryLinks = [
-    { name: 'Manufacturing', href: '#industries' },
-    { name: 'Food Processing', href: '#industries' },
-    { name: 'Hospitality Projects', href: '#industries' },
-    { name: 'Smart Agriculture', href: '#industries' },
+    { name: t('projectShowcase.categories.Manufacturing'), href: '#industries' },
+    { name: t('projectShowcase.categories.Food Processing'), href: '#industries' },
+    { name: t('industries.items.6.title'), href: '#industries' }, // Hospitality
+    { name: t('projectShowcase.categories.Agriculture'), href: '#industries' }, // Agriculture
   ];
 
   return (
@@ -32,15 +35,15 @@ const FooterSection = () => {
               />
               <div className="flex flex-col">
                 <span className="text-base font-heading font-black tracking-tight text-[#0A2463] uppercase leading-none">
-                  World Export
+                  {t('nav.brandName')}
                 </span>
                 <span className="text-[9px] text-[#F59E0B] font-bold tracking-widest uppercase leading-none mt-1">
-                  Business Housing Centre
+                  {t('nav.brandSubtitle')}
                 </span>
               </div>
             </a>
             <p className="text-slate-600 leading-relaxed max-w-sm text-sm">
-              Industrial project developers and business advisors assisting promoters with land allocation, bank finance, and turnkey factory setup approvals.
+              {t('footer.desc')}
             </p>
             
             {/* Social Icons */}
@@ -77,7 +80,7 @@ const FooterSection = () => {
 
           {/* Links Column 1 */}
           <div className="hidden md:block">
-            <h4 className="font-bold font-heading text-slate-900 mb-6 text-sm">Quick Links</h4>
+            <h4 className="font-bold font-heading text-slate-900 mb-6 text-sm">{t('footer.quickLinks')}</h4>
             <ul className="space-y-4">
               {navigationLinks.map((link) => (
                 <li key={link.name}>
@@ -91,7 +94,7 @@ const FooterSection = () => {
 
           {/* Links Column 2 */}
           <div className="hidden md:block">
-            <h4 className="font-bold font-heading text-slate-900 mb-6 text-sm">Sectors</h4>
+            <h4 className="font-bold font-heading text-slate-900 mb-6 text-sm">{t('footer.sectors')}</h4>
             <ul className="space-y-4">
               {industryLinks.map((link) => (
                 <li key={link.name}>
@@ -105,12 +108,12 @@ const FooterSection = () => {
 
           {/* Contact Column */}
           <div className="hidden md:block">
-            <h4 className="font-bold font-heading text-slate-900 mb-6 text-sm">Advisory Desk</h4>
+            <h4 className="font-bold font-heading text-slate-900 mb-6 text-sm">{t('footer.advisoryDesk')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" />
                 <span className="text-slate-600 text-xs leading-relaxed font-semibold">
-                  Service Area: Gujarat, Maharashtra, Madhya Pradesh & Rajasthan.
+                  {t('footer.serviceAreaLabel')}
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -132,11 +135,11 @@ const FooterSection = () => {
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-xs">
-            © {new Date().getFullYear()} World Export Business Housing Centre. All rights reserved.
+            © {new Date().getFullYear()} {t('nav.brandName')} {t('nav.brandSubtitle')}. {t('footer.copyright')}
           </p>
           <div className="flex gap-6 text-xs font-bold uppercase tracking-wider">
-            <a href="#about" className="text-slate-500 hover:text-[#0A2463] transition-colors">Transparency</a>
-            <a href="#about" className="text-slate-500 hover:text-[#0A2463] transition-colors">Growth</a>
+            <a href="#about" className="text-slate-500 hover:text-[#0A2463] transition-colors">{t('about.transparency')}</a>
+            <a href="#about" className="text-slate-500 hover:text-[#0A2463] transition-colors">{t('footer.growth')}</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "gallery-1",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
+    "category": "Corporate Branding",
+    "title": "Official Corporate Identity",
+    "description": "World Export Business Housing Centre logo representing global industrial reach and business integration."
+  },
+  {
+    "id": "gallery-2",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
+    "category": "Logistics & Fleet",
+    "title": "Corporate Transit Fleet Design",
+    "description": "Modern vehicle wrapping and logistics design for domestic transport and industrial fleet management."
+  },
+  {
+    "id": "gallery-3",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
+    "category": "Global Operations",
+    "title": "International Business Network",
+    "description": "Flag integration representation highlighting cross-border business consultancy, export capabilities, and trade routes."
+  },
+  {
+    "id": "gallery-4",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
+    "category": "Corporate Branding",
+    "title": "Dark Theme Executive Brandmark",
+    "description": "Logo set against premium dark background for executive branding, office entrance, and boardroom displays."
+  },
+  {
+    "id": "gallery-5",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
+    "category": "Global Operations",
+    "title": "National Flag Collaborations",
+    "description": "Trade flags depicting strategic partnerships across key European, Asian, American, and Gulf partner countries."
+  },
+  {
+    "id": "gallery-6",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
+    "category": "Corporate Branding",
+    "title": "High Resolution Emblem",
+    "description": "Core emblem showcasing urban infrastructure and global trade dynamics under unified advisory."
+  },
+  {
+    "id": "gallery-7",
+    "type": "image",
+    "src": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
+    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
+    "category": "Global Operations",
+    "title": "Global Trade Corridor Representation",
+    "description": "Visualizing World Export's reach from the local industrial centers to international markets."
+  }
+]

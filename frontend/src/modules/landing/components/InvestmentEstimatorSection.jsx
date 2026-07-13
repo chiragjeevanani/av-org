@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, animate } from 'framer-motion';
 import { Wallet, Landmark, TrendingUp, HandCoins, Building } from 'lucide-react';
+import { useLanguage } from '../../../context/LanguageContext';
 
-const SmoothCounter = ({ value, isCrores = false }) => {
+const SmoothCounter = ({ value, isCrores = false, croresLabel = "Crores", lakhsLabel = "Lakhs" }) => {
   const [displayValue, setDisplayValue] = useState(value);
   const count = useMotionValue(value);
 
@@ -16,12 +17,13 @@ const SmoothCounter = ({ value, isCrores = false }) => {
   }, [value, count]);
 
   if (isCrores) {
-    return <span>{(displayValue / 100).toFixed(2)} Crores</span>;
+    return <span>{(displayValue / 100).toFixed(2)} {croresLabel}</span>;
   }
-  return <span>{Math.round(displayValue).toLocaleString()} Lakhs</span>;
+  return <span>{Math.round(displayValue).toLocaleString()} {lakhsLabel}</span>;
 };
 
 const InvestmentEstimatorSection = () => {
+  const { t } = useLanguage();
   // slider values in Lakhs (85 Lakhs to 350 Lakhs)
   const [projectCost, setProjectCost] = useState(150); 
 
@@ -37,6 +39,9 @@ const InvestmentEstimatorSection = () => {
     setProjectCost(parseInt(e.target.value));
   };
 
+  const crores = t('estimator.crores');
+  const lakhs = t('estimator.lakhs');
+
   return (
     <section className="py-24 bg-white overflow-hidden" id="finance">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -45,24 +50,24 @@ const InvestmentEstimatorSection = () => {
           {/* Left Side: Controls */}
           <div className="w-full lg:w-1/2">
             <span className="text-[#F59E0B] font-bold uppercase tracking-widest text-xs block mb-3">
-              Interactive Estimator
+              {t('estimator.badge')}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-slate-900 tracking-tighter mb-4">
-              Project Funding & <br />
-              <span className="text-[#0A2463] italic">Subsidy Matrix</span>
+              {t('estimator.title')} <br />
+              <span className="text-[#0A2463] italic">{t('estimator.titleItalic')}</span>
             </h2>
             <p className="text-slate-500 mb-10 text-sm leading-relaxed">
-              Drag the interactive slider below to match your proposed capital budget. Instantly estimate bank credit eligibility and governmental MSME capital subsidies.
+              {t('estimator.description')}
             </p>
 
             <div className="space-y-12 bg-slate-50/50 p-8 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden">
                {/* Cost Display */}
                <div className="relative">
                   <div className="flex justify-between items-end mb-6">
-                    <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">Total Project Scale</span>
-                    <span className="text-2xl sm:text-3xl font-black font-heading text-slate-900 tracking-tighter">
-                      ₹<SmoothCounter value={projectCost} isCrores={projectCost >= 100} />
-                    </span>
+                     <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">{t('estimator.scaleLabel')}</span>
+                     <span className="text-2xl sm:text-3xl font-black font-heading text-slate-900 tracking-tighter">
+                       ₹<SmoothCounter value={projectCost} isCrores={projectCost >= 100} croresLabel={crores} lakhsLabel={lakhs} />
+                     </span>
                   </div>
                   
                   {/* Slider Control */}
@@ -83,8 +88,8 @@ const InvestmentEstimatorSection = () => {
                     />
                   </div>
                   <div className="flex justify-between mt-4 text-[9px] font-black uppercase text-slate-400 tracking-widest px-1">
-                    <span>₹85 Lakhs</span>
-                    <span>₹3.5 Crores</span>
+                    <span>₹85 {lakhs}</span>
+                    <span>₹3.5 {crores}</span>
                   </div>
                </div>
             </div>
@@ -103,11 +108,11 @@ const InvestmentEstimatorSection = () => {
                    <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center mb-3">
                       <Wallet className="w-5 h-5 text-amber-400" />
                    </div>
-                   <p className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mb-1">Estimated Loan</p>
+                   <p className="text-[9px] font-black uppercase tracking-[0.3em] text-slate-400 mb-1">{t('estimator.loanLabel')}</p>
                    <div className="text-3xl sm:text-4xl font-black font-heading text-slate-900 tracking-tighter mb-1">
-                      ₹<SmoothCounter value={bankLoan} />
+                      ₹<SmoothCounter value={bankLoan} isCrores={bankLoan >= 100} croresLabel={crores} lakhsLabel={lakhs} />
                    </div>
-                   <p className="text-[10px] font-bold text-[#0A2463] uppercase tracking-widest">75% Loan Support</p>
+                   <p className="text-[10px] font-bold text-[#0A2463] uppercase tracking-widest">{t('estimator.loanSub')}</p>
                 </div>
 
                 {/* Satellite Subsidies card (Top Right) */}
@@ -120,8 +125,8 @@ const InvestmentEstimatorSection = () => {
                       <Landmark className="w-4 h-4" />
                    </div>
                    <div>
-                      <p className="text-[8px] font-black uppercase tracking-widest text-slate-400">Govt Subsidy (15%)</p>
-                      <p className="text-xs font-black text-slate-800">₹<SmoothCounter value={govSubsidy} /></p>
+                      <p className="text-[8px] font-black uppercase tracking-widest text-slate-400">{t('estimator.subsidyLabel')}</p>
+                      <p className="text-xs font-black text-slate-800">₹<SmoothCounter value={govSubsidy} isCrores={govSubsidy >= 100} croresLabel={crores} lakhsLabel={lakhs} /></p>
                    </div>
                 </motion.div>
  
@@ -136,8 +141,8 @@ const InvestmentEstimatorSection = () => {
                       <HandCoins className="w-4 h-4" />
                    </div>
                    <div>
-                      <p className="text-[8px] font-black uppercase tracking-widest text-slate-400">Your Share (10%)</p>
-                      <p className="text-xs font-black text-slate-800">₹<SmoothCounter value={promoterMargin} /></p>
+                      <p className="text-[8px] font-black uppercase tracking-widest text-slate-400">{t('estimator.promoterLabel')}</p>
+                      <p className="text-xs font-black text-slate-800">₹<SmoothCounter value={promoterMargin} isCrores={promoterMargin >= 100} croresLabel={crores} lakhsLabel={lakhs} /></p>
                    </div>
                 </motion.div>
              </div>

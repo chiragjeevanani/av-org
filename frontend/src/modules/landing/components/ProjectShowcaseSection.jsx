@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import projectsData from "../../../data/projects.json";
+import { useLanguage } from "../../../context/LanguageContext";
 import { 
   Building2, Factory, HelpCircle, HardHat, 
   Settings, ShoppingCart, Activity, Coffee, Cpu 
@@ -31,6 +31,7 @@ const categories = [
 ];
 
 export default function ProjectShowcaseSection() {
+  const { projects: projectsData, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("All Sectors");
   const [visibleCount, setVisibleCount] = useState(8);
 
@@ -54,14 +55,14 @@ export default function ProjectShowcaseSection() {
         {/* Section Heading */}
         <div className="max-w-3xl mb-16 md:mb-24">
           <span className="text-[#F59E0B] font-bold uppercase tracking-[0.2em] text-xs mb-4 block">
-            Project Portfolio
+            {t('projectShowcase.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-[#0A2463] leading-[1.15] mb-6 tracking-tight">
-            Verified Industrial <br />
-            <span className="text-slate-400">Investment Showcases</span>
+            {t('projectShowcase.title')} <br />
+            <span className="text-slate-400">{t('projectShowcase.titleGradient')}</span>
           </h2>
           <p className="text-base text-slate-500 font-body leading-relaxed max-w-2xl">
-            Browse through 30 pre-researched manufacturing, agricultural, and commercial layout setups. Each comes with state clearances, DPR models, and empanelled bank loan facilities.
+            {t('projectShowcase.description')}
           </p>
         </div>
 
@@ -77,7 +78,7 @@ export default function ProjectShowcaseSection() {
                   : "bg-white text-slate-600 border-slate-200 hover:bg-slate-100"
               }`}
             >
-              {category}
+              {t(`projectShowcase.categories.${category}`)}
             </button>
           ))}
         </div>
@@ -110,12 +111,12 @@ export default function ProjectShowcaseSection() {
                         <IconComponent className="h-5 w-5" />
                       </div>
                       <span className="px-2.5 py-1 bg-amber-50 text-amber-600 rounded-md border border-amber-100 text-[9px] font-bold tracking-widest uppercase">
-                        Coming Soon
+                        {t('projectShowcase.comingSoon')}
                       </span>
                     </div>
 
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                      {project.category}
+                      {t(`projectShowcase.categories.${project.category}`)}
                     </span>
                     <h4 className="text-base font-bold font-heading text-slate-800 mt-1 mb-3 group-hover:text-[#0A2463] transition-colors leading-tight">
                       {project.title}
@@ -129,7 +130,7 @@ export default function ProjectShowcaseSection() {
                   <div className="border-t border-slate-100 pt-4 mt-6 grid grid-cols-2 gap-2 text-[10px]">
                     <div>
                       <span className="text-slate-400 font-semibold uppercase tracking-wider block">
-                        Est. Investment
+                        {t('projectShowcase.estInvestment')}
                       </span>
                       <span className="font-bold text-[#0A2463] mt-0.5 block">
                         {project.investment}
@@ -137,7 +138,7 @@ export default function ProjectShowcaseSection() {
                     </div>
                     <div>
                       <span className="text-slate-400 font-semibold uppercase tracking-wider block">
-                        Plot Dimension
+                        {t('projectShowcase.plotDimension')}
                       </span>
                       <span className="font-bold text-slate-700 mt-0.5 block">
                         {project.plotSize}
@@ -157,7 +158,7 @@ export default function ProjectShowcaseSection() {
               onClick={showMore}
               className="px-8 py-3.5 bg-white hover:bg-slate-50 text-[#0A2463] border-2 border-slate-100 rounded-full font-bold text-xs uppercase tracking-widest transition-all"
             >
-              Load More Projects ({filteredProjects.length - visibleCount} Remaining)
+              {t('projectShowcase.loadMore')} ({filteredProjects.length - visibleCount} {t('projectShowcase.remaining')})
             </button>
           </div>
         )}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import galleryData from "../../../data/gallery.json";
+import { useLanguage } from "../../../context/LanguageContext";
 import { Card } from "../../../components/ui/card";
 import { Button } from "../../../components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "../../../components/ui/dialog";
@@ -9,6 +9,7 @@ import { Play, ZoomIn, Eye, Image as ImageIcon, Video as VideoIcon } from "lucid
 const categories = ["All Assets", "Corporate Branding", "Global Operations", "Logistics & Fleet"];
 
 export default function Gallery() {
+  const { gallery: galleryData, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("All Assets");
   const [activeItem, setActiveItem] = useState(null); // Item selected for lightbox
 
@@ -23,13 +24,13 @@ export default function Gallery() {
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-[#F59E0B] bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
-            Brand Identity Gallery
+            {t('gallery.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0A2463] mt-4">
-            Visual Brand Assets
+            {t('gallery.title')}
           </h2>
           <p className="text-slate-600 text-sm mt-3 leading-relaxed">
-            Preview our officially registered trademark designs, vehicle livery graphics, and international network badges representing the World Export Business Housing Centre brand.
+            {t('gallery.description')}
           </p>
         </div>
 
@@ -45,7 +46,7 @@ export default function Gallery() {
                   : "bg-white text-slate-600 border-slate-200 hover:bg-slate-100"
               }`}
             >
-              {category}
+              {t(`gallery.categories.${category}`)}
             </button>
           ))}
         </div>
@@ -82,12 +83,12 @@ export default function Gallery() {
                       {item.type === "video" ? (
                         <>
                           <VideoIcon className="h-3.5 w-3.5 text-amber-400" />
-                          <span>Video Presentation</span>
+                          <span>{t('gallery.videoPres')}</span>
                         </>
                       ) : (
                         <>
                           <ImageIcon className="h-3.5 w-3.5 text-amber-400" />
-                          <span>Design Asset</span>
+                          <span>{t('gallery.designAsset')}</span>
                         </>
                       )}
                     </div>
@@ -100,7 +101,7 @@ export default function Gallery() {
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-white/10 flex justify-between items-center text-[10px] text-amber-400 font-bold uppercase tracking-wider">
-                      <span>Click to view</span>
+                      <span>{t('gallery.clickToView')}</span>
                       <ZoomIn className="h-4 w-4" />
                     </div>
                   </div>
@@ -146,7 +147,7 @@ export default function Gallery() {
                 {/* Text specs */}
                 <div className="p-6 bg-slate-900 text-white border-t border-slate-800">
                   <span className="text-[10px] text-amber-400 font-bold uppercase tracking-widest block">
-                    {activeItem.category}
+                    {t(`gallery.categories.${activeItem.category}`)}
                   </span>
                   <DialogTitle className="text-xl font-extrabold text-white font-heading mt-1">
                     {activeItem.title}

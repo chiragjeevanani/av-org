@@ -1,51 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, Cpu, Award, MapPin, ShieldCheck, Compass, CheckCircle2 } from 'lucide-react';
-
-const features = [
-  {
-    icon: <Users className="w-6 h-6" />,
-    title: 'Experienced Team',
-    description: 'Senior industrial engineers, chartered appraisers, and bank policy specialists guiding your setup.',
-  },
-  {
-    icon: <Compass className="w-6 h-6" />,
-    title: 'Investment Guidance',
-    description: 'Direct allocations corresponding to priority MSME subsidies and cash flow yields.',
-  },
-  {
-    icon: <Cpu className="w-6 h-6" />,
-    title: 'Industrial Expertise',
-    description: 'In-depth processing knowledge spanning 8 major domains and 30 manufacturing concepts.',
-  },
-  {
-    icon: <TrendingUp className="w-6 h-6" />,
-    title: 'Business Planning',
-    description: 'Detailed project reports (DPR), cost breakups, and market feasibility valuations.',
-  },
-  {
-    icon: <Award className="w-6 h-6" />,
-    title: 'Finance Assistance',
-    description: 'Facilitating secure debt term limits, working capital approvals, and bank coordination.',
-  },
-  {
-    icon: <MapPin className="w-6 h-6" />,
-    title: 'Location Selection',
-    description: 'Zoning clearances and pre-demarcated plots inside premium state industrial parks.',
-  },
-  {
-    icon: <ShieldCheck className="w-6 h-6" />,
-    title: 'Government Clearances',
-    description: 'NOCs from Pollution Boards, electricity boards, factory departments, and tax registers.',
-  },
-  {
-    icon: <CheckCircle2 className="w-6 h-6" />,
-    title: 'End-to-End Commissioning',
-    description: 'Turnkey advisory from layout drawing approval to machinery trials and commercial runs.',
-  },
-];
+import { useLanguage } from '../../../context/LanguageContext';
 
 const FeaturesSection = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: t('features.items.0.title'),
+      description: t('features.items.0.description'),
+    },
+    {
+      icon: <Compass className="w-6 h-6" />,
+      title: t('features.items.1.title'),
+      description: t('features.items.1.description'),
+    },
+    {
+      icon: <Cpu className="w-6 h-6" />,
+      title: t('features.items.2.title'),
+      description: t('features.items.2.description'),
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: t('features.items.3.title'),
+      description: t('features.items.3.description'),
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: t('features.items.4.title'),
+      description: t('features.items.4.description'),
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: t('features.items.5.title'),
+      description: t('features.items.5.description'),
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6" />,
+      title: t('features.items.6.title'),
+      description: t('features.items.6.description'),
+    },
+    {
+      icon: <CheckCircle2 className="w-6 h-6" />,
+      title: t('features.items.7.title'),
+      description: t('features.items.7.description'),
+    },
+  ];
+
   return (
     <section id="why-choose-us" className="py-24 lg:py-32 bg-[#F9FAFB] relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -57,7 +60,7 @@ const FeaturesSection = () => {
             viewport={{ once: true }}
             className="text-[#F59E0B] font-bold uppercase tracking-[0.2em] text-xs mb-4"
           >
-            Why Choose Us
+            {t('features.badge')}
           </motion.p>
           
           <motion.h2
@@ -67,8 +70,8 @@ const FeaturesSection = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-[#0A2463] leading-[1.15] mb-6 tracking-tight"
           >
-            Industrial engineering built for <br />
-            <span className="text-slate-400">performance & stability</span>
+            {t('features.title')} <br />
+            <span className="text-slate-400">{t('features.titleGradient')}</span>
           </motion.h2>
 
           <motion.p
@@ -78,7 +81,7 @@ const FeaturesSection = () => {
             transition={{ delay: 0.2 }}
             className="text-base text-slate-500 font-body leading-relaxed max-w-2xl"
           >
-            We manage structural project plans, capital subsidies, and operational requirements so you can deploy capital with confidence.
+            {t('features.description')}
           </motion.p>
         </div>
 

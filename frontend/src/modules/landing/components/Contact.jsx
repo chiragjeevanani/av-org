@@ -4,9 +4,11 @@ import { Input } from "../../../components/ui/input";
 import { Textarea } from "../../../components/ui/textarea";
 import { Button } from "../../../components/ui/button";
 import { Phone, Mail, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
-import projectsData from "../../../data/projects.json";
+import { useLanguage } from "../../../context/LanguageContext";
 
 export default function Contact() {
+  const { projects: projectsData, t } = useLanguage();
+  
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -19,7 +21,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.project) {
-      alert("Please fill in Name, Phone, and Project Interest.");
+      alert(t('contact.form.alertEmpty'));
       return;
     }
     // Simulate submission
@@ -38,13 +40,13 @@ export default function Contact() {
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-[#F59E0B] bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
-            Get In Touch
+            {t('contact.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0A2463] mt-4">
-            Request Consultation
+            {t('contact.title')}
           </h2>
           <p className="text-slate-600 text-sm mt-3 leading-relaxed">
-            Fill out the form below to register your investment interest. Our senior industrial advisor will reach out within 24 business hours.
+            {t('contact.description')}
           </p>
         </div>
 
@@ -62,7 +64,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
-                    Direct Advisory Hotline
+                    {t('contact.hotline')}
                   </span>
                   <a href="tel:9328650500" className="text-lg font-bold text-slate-800 hover:text-primary transition-colors block mt-0.5">
                     +91 93286 50500
@@ -77,10 +79,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
-                    Service Areas
+                    {t('contact.serviceAreas')}
                   </span>
                   <span className="text-sm font-bold text-slate-800 block mt-1">
-                    Gujarat • Maharashtra • Madhya Pradesh • Rajasthan
+                    {t('map.states.gujarat.name')} • {t('map.states.maharashtra.name')} • {t('map.states.madhya_pradesh.name')} • {t('map.states.rajasthan.name')}
                   </span>
                 </div>
               </div>
@@ -92,7 +94,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
-                    Corporate Email
+                    {t('contact.email')}
                   </span>
                   <a href="mailto:info@worldexportbhc.com" className="text-sm font-bold text-slate-800 hover:text-emerald-600 transition-colors block mt-1">
                     info@worldexportbhc.com
@@ -109,10 +111,10 @@ export default function Contact() {
               <div className="relative z-10 space-y-2">
                 <MapPin className="h-8 w-8 text-amber-500 mx-auto animate-bounce" />
                 <h4 className="text-white font-bold font-heading text-sm uppercase tracking-wider">
-                  Regional Office Locator
+                  {t('contact.locatorTitle')}
                 </h4>
                 <p className="text-[10px] text-slate-400 max-w-xs mx-auto leading-relaxed">
-                  Headquartered in Western India. Detailed route maps will be uploaded following the office inauguration ceremony.
+                  {t('contact.locatorDesc')}
                 </p>
               </div>
             </div>
@@ -134,7 +136,7 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
                       <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
-                        Your Full Name *
+                        {t('contact.form.nameLabel')}
                       </label>
                       <Input
                         type="text"
@@ -142,13 +144,13 @@ export default function Contact() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="e.g. Rajesh Kumar"
+                        placeholder={t('contact.form.namePlaceholder')}
                         className="bg-slate-50/50 border-slate-200 focus:bg-white text-slate-800 text-xs py-5"
                       />
                     </div>
                     <div>
                       <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
-                        Contact Phone *
+                        {t('contact.form.phoneLabel')}
                       </label>
                       <Input
                         type="tel"
@@ -156,7 +158,7 @@ export default function Contact() {
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="e.g. +91 98765 43210"
+                        placeholder={t('contact.form.phonePlaceholder')}
                         className="bg-slate-50/50 border-slate-200 focus:bg-white text-slate-800 text-xs py-5"
                       />
                     </div>
@@ -164,33 +166,33 @@ export default function Contact() {
 
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
-                      Email Address
+                      {t('contact.form.emailLabel')}
                     </label>
                     <Input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="e.g. rajesh@company.com"
+                      placeholder={t('contact.form.emailPlaceholder')}
                       className="bg-slate-50/50 border-slate-200 focus:bg-white text-slate-800 text-xs py-5"
                     />
                   </div>
 
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
-                      Project of Interest *
+                      {t('contact.form.projectLabel')}
                     </label>
                     <select
                       name="project"
                       required
                       value={formData.project}
                       onChange={handleInputChange}
-                      className="flex h-10 w-full rounded-lg border border-slate-200 bg-slate-55 bg-slate-50/50 px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-slate-700"
+                      className="flex h-10 w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-slate-700"
                     >
-                      <option value="">Select Project Concept</option>
+                      <option value="">{t('contact.form.projectPlaceholder')}</option>
                       {projectsData.map(p => (
                         <option key={p.id} value={p.title}>
-                          {p.title} ({p.category})
+                          {p.title} ({t(`projectShowcase.categories.${p.category}`)})
                         </option>
                       ))}
                     </select>
@@ -198,14 +200,14 @@ export default function Contact() {
 
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
-                      Detailed Message / Inquiries
+                      {t('contact.form.messageLabel')}
                     </label>
                     <Textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      placeholder="Please details your plot size requirements, timeline, and requested bank loan percentage..."
+                      placeholder={t('contact.form.messagePlaceholder')}
                       className="bg-slate-50/50 border-slate-200 focus:bg-white text-slate-800 text-xs"
                     />
                   </div>
@@ -213,9 +215,9 @@ export default function Contact() {
                   <Button
                     type="submit"
                     variant="default"
-                    className="w-full uppercase font-bold text-xs tracking-widest py-6 group bg-primary hover:bg-primary-hover text-white"
+                    className="w-full uppercase font-bold text-xs tracking-widest py-6 group bg-[#0A2463] hover:bg-[#F59E0B] hover:text-[#0F172A] text-white transition-all duration-300"
                   >
-                    Submit Advisory Request
+                    {t('contact.form.submitBtn')}
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
                 </motion.form>
@@ -230,10 +232,13 @@ export default function Contact() {
                     <CheckCircle2 className="h-10 w-10" />
                   </div>
                   <h3 className="text-xl font-bold font-heading text-[#0A2463]">
-                    Advisory Request Registered
+                    {t('contact.form.successTitle')}
                   </h3>
                   <p className="text-slate-600 text-xs max-w-sm mx-auto leading-relaxed">
-                    Thank you, <strong className="text-slate-800">{formData.name}</strong>. Your query concerning <strong className="text-slate-800">{formData.project}</strong> has been logged. An executive will call your phone at <strong className="text-slate-800">{formData.phone}</strong> shortly.
+                    {t('contact.form.successDesc')
+                      .replace('{name}', formData.name)
+                      .replace('{project}', formData.project)
+                      .replace('{phone}', formData.phone)}
                   </p>
                   <Button
                     onClick={() => {
@@ -243,7 +248,7 @@ export default function Contact() {
                     variant="outline"
                     className="px-6 text-xs uppercase font-bold tracking-wider border-slate-200 text-slate-600"
                   >
-                    Submit Another Query
+                    {t('contact.form.successBtn')}
                   </Button>
                 </motion.div>
               )}
