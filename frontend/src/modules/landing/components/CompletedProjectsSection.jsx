@@ -27,7 +27,7 @@ export default function CompletedProjectsSection() {
       <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(#0A2463_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        
+
         {/* Section Heading */}
         <div className="max-w-3xl mb-16 md:mb-20">
           <span className="text-[#F59E0B] font-bold uppercase tracking-[0.2em] text-xs mb-4 block">
@@ -53,7 +53,7 @@ export default function CompletedProjectsSection() {
               className="group bg-white rounded-3xl border border-slate-150 shadow-sm hover:shadow-md hover:border-amber-300 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between h-full relative overflow-hidden"
             >
               <div className="space-y-5">
-                
+
                 {/* Header: Category & Status Badge */}
                 <div className="flex justify-between items-start gap-4">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
@@ -89,6 +89,8 @@ export default function CompletedProjectsSection() {
                 <p className="text-xs text-slate-500 leading-relaxed font-body">
                   {project.description}
                 </p>
+
+
 
               </div>
 
