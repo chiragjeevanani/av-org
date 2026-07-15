@@ -61,59 +61,6 @@ export default function EvChargingSection() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />
 
-              {/* Glowing Pulse Rings centered on the charger using Framer Motion */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                {/* Ring 1 */}
-                <motion.div
-                  className="absolute rounded-full border border-emerald-400/40 bg-emerald-500/5"
-                  style={{ width: '40px', height: '40px' }}
-                  animate={{
-                    scale: [1, 4, 7],
-                    opacity: [0.8, 0.4, 0],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 3,
-                    ease: 'easeOut',
-                  }}
-                />
-                
-                {/* Ring 2 */}
-                <motion.div
-                  className="absolute rounded-full border border-emerald-400/30 bg-emerald-500/5"
-                  style={{ width: '40px', height: '40px' }}
-                  animate={{
-                    scale: [1, 4, 7],
-                    opacity: [0.8, 0.4, 0],
-                  }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 3,
-                    ease: 'easeOut',
-                    delay: 1.5,
-                  }}
-                />
-
-                {/* Glow Overlay at the cable dock position */}
-                <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-emerald-500/20 blur-[15px] animate-pulse pointer-events-none" />
-              </div>
-
-              {/* Energy Flow Animation lines */}
-              <div className="absolute bottom-6 left-6 right-6 h-1 bg-slate-200/50 rounded-full overflow-hidden pointer-events-none">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400 rounded-full"
-                  style={{ width: '30%' }}
-                  animate={{
-                    x: ['-100%', '350%'],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                />
-              </div>
-
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent pointer-events-none" />
             </motion.div>
 
