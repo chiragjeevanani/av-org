@@ -91,11 +91,11 @@ const MapSection = () => {
               className="grid grid-cols-2 gap-12"
             >
               <div className="border-l-4 border-[#0A2463] pl-6">
-                <div className="text-4xl font-black font-heading text-[#0A2463] mb-1 tracking-tight">4</div>
+                <div className="text-4xl font-black font-heading text-[#0A2463] mb-1 tracking-tight">{stateData.length}</div>
                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('map.activeStates')}</div>
               </div>
               <div className="border-l-4 border-slate-100 pl-6">
-                <div className="text-4xl font-black font-heading text-[#0A2463] mb-1 tracking-tight">28+</div>
+                <div className="text-4xl font-black font-heading text-[#0A2463] mb-1 tracking-tight">85+</div>
                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('map.industrialHubs')}</div>
               </div>
             </motion.div>
@@ -105,7 +105,7 @@ const MapSection = () => {
           <div className="lg:col-span-6 relative w-full bg-slate-50/50 rounded-[2.5rem] border border-slate-100 p-6 md:p-10 shadow-sm flex flex-col md:flex-row gap-6">
             
             {/* Left buttons tabs */}
-            <div className="flex flex-row md:flex-col gap-2 w-full md:w-1/3 shrink-0 overflow-x-auto pb-4 md:pb-0">
+            <div className="flex flex-row md:flex-col gap-2 w-full md:w-1/3 shrink-0 overflow-x-auto md:overflow-y-auto pb-4 md:pb-0 md:max-h-[380px] pr-1">
               {stateData.map((st) => (
                 <button
                   key={st.id}

@@ -65,7 +65,7 @@ export default function Finance() {
                   Target Project Size
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black font-heading text-white mt-1 mb-2">
-                  ₹85 Lakhs - ₹3.5 Cr
+                  ₹85 Lakhs - ₹10 Crore+
                 </h3>
                 <p className="text-xs text-slate-300 leading-relaxed max-w-xs">
                   Investment limit matching state priority sector development standards.

@@ -11,13 +11,11 @@ const StatsSection = () => {
     threshold: 0.1,
   });
 
-  const setupCount = useCountUp(120, 2000, inView);
-  const promoterCount = useCountUp(80, 2000, inView);
-  const capitalCount = useCountUp(250, 2000, inView);
+  const capitalCount = useCountUp(6000, 2000, inView);
 
   const stats = [
-    { id: 1, name: t('stats.layouts'), value: setupCount, suffix: '+' },
-    { id: 2, name: t('stats.promoters'), value: promoterCount, suffix: '+' },
+    { id: 1, name: t('stats.layouts'), value: t('stats.layoutsVal'), suffix: '' },
+    { id: 2, name: t('stats.promoters'), value: t('stats.promotersVal'), suffix: '' },
     { id: 3, name: t('stats.capital'), value: `₹${capitalCount}`, suffix: t('estimator.crores') === 'Crores' ? 'Cr+' : ` ${t('estimator.crores')}+` },
   ];
 
@@ -38,7 +36,7 @@ const StatsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="px-4"
             >
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold font-sans mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
                 <span>{stat.value}</span>
                 <span className="text-[#F59E0B] ml-1">{stat.suffix}</span>
               </div>

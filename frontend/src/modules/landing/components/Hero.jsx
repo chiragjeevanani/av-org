@@ -121,14 +121,14 @@ export default function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-900/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-2xl"
         >
           <div className="text-center md:border-r border-white/10 last:border-0 pb-4 md:pb-0">
-            <h4 className="text-2xl sm:text-3xl font-bold font-heading text-white">30+</h4>
+            <h4 className="text-2xl sm:text-3xl font-bold font-heading text-white">40+</h4>
             <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">
               Industrial Projects
             </p>
           </div>
           <div className="text-center md:border-r border-white/10 last:border-0 pb-4 md:pb-0">
             <h4 className="text-2xl sm:text-3xl font-bold font-heading text-[#F59E0B]">
-              ₹85L - ₹3.5Cr
+              ₹85L - ₹10Cr+
             </h4>
             <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-1">
               Investment Scale

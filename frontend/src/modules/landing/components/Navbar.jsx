@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../../../lib/utils';
-import logo from '/WhatsApp Image 2026-07-07 at 11.52.09.jpeg';
+import logo from '../../../assets/logo.jpeg';
 import { useLanguage } from '../../../context/LanguageContext';
 import LanguageSwitcher from '../../../components/LanguageSwitcher';
 
@@ -71,7 +71,7 @@ const Navbar = () => {
         >
           <img 
             src={logo} 
-            alt="World Export Logo" 
+            alt="AV Group Organization Management Logo" 
             className="w-10 h-10 object-contain rounded transition-transform duration-300 group-hover:scale-105" 
           />
           <div className="flex flex-col">

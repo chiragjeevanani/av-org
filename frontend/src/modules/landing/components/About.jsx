@@ -25,6 +25,11 @@ export default function About() {
             <p className="text-slate-600 leading-relaxed text-sm">
               {t('about.description')}
             </p>
+            {t('about.partnershipText') && (
+              <p className="text-slate-600 leading-relaxed text-sm mt-4">
+                {t('about.partnershipText')}
+              </p>
+            )}
 
             <div className="grid sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
               <div className="flex items-center space-x-2">
@@ -51,9 +56,10 @@ export default function About() {
                 </div>
                 <h4 className="font-bold text-[#0A2463] font-heading text-base">{t('about.visionTitle')}</h4>
               </div>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                {t('about.visionText')}
-              </p>
+              <p 
+                className="text-slate-600 text-xs leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: t('about.visionText') }}
+              />
             </div>
 
             <div className="p-6 border border-slate-100 bg-[#F9FAFB] rounded-2xl space-y-3 shadow-sm hover:shadow-md transition-shadow">

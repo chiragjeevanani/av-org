@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import logo from '/WhatsApp Image 2026-07-07 at 11.52.09.jpeg';
+import logo from '../../../assets/logo.jpeg';
 import { useLanguage } from '../../../context/LanguageContext';
 
 const FooterSection = () => {
@@ -30,7 +30,7 @@ const FooterSection = () => {
             <a href="#home" className="flex items-center space-x-2 w-max">
               <img
                 src={logo}
-                alt="World Export Logo"
+                alt="AV Group Organization Management Logo"
                 className="w-10 h-10 object-contain rounded"
               />
               <div className="flex flex-col">
@@ -118,8 +118,8 @@ const FooterSection = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#F59E0B] shrink-0" />
-                <a href="tel:9328650500" className="text-slate-600 text-xs font-bold hover:text-[#0A2463] transition-colors">
-                  +91 93286 50500
+                <a href="tel:9978655799" className="text-slate-600 text-xs font-bold hover:text-[#0A2463] transition-colors">
+                  +91 99786 55799
                 </a>
               </li>
               <li className="flex items-center gap-3">

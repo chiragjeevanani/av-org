@@ -2,64 +2,46 @@
   {
     "id": "gallery-1",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
-    "category": "Corporate Branding",
-    "title": "સત્તાવાર કોર્પોરેટ ઓળખ",
-    "description": "વર્લ્ડ એક્સપોર્ટ બિઝનેસ હાઉસિંગ સેન્ટરનો લોગો જે વૈશ્વિક ઔદ્યોગિક પહોંચ અને વ્યાપારી એકીકરણનું પ્રતિનિધિત્વ કરે છે."
+    "src": "gallery1",
+    "thumbnail": "gallery1",
+    "category": "Logistics & Fleet",
+    "title": "કોર્પોરેટ ટ્રાન્ઝિટ ફ્લીટ ડિઝાઇન",
+    "description": "સ્થાનિક પરિવહન અને ઔદ્યોગિક ફ્લીટ સંચાલન માટે આધુનિક વાહન રેપિંગ અને લોજિસ્ટિક્સ ડિઝાઇન."
   },
   {
     "id": "gallery-2",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
-    "category": "Logistics & Fleet",
-    "title": "કોર્પોરેટ ટ્રાન્ઝિટ ફ્લીટ ડિઝાઇન",
-    "description": "સ્થાનિક પરિવહન અને ઔદ્યોગિક વાહન કાફલાના સંચાલન માટે આધુનિક વ્હીકલ રેપિંગ અને લોજિસ્ટિક્સ ડિઝાઇન."
+    "src": "gallery3",
+    "thumbnail": "gallery3",
+    "category": "Global Operations",
+    "title": "આંતરરાષ્ટ્રીય વ્યાપારી નેટવર્ક",
+    "description": "સ્થાનિક અને આંતરરાષ્ટ્રીય ઔદ્યોગિક વિકાસને સરળ બનાવતા વૈશ્વિક જોડાણ અને વ્યૂહાત્મક વ્યાપારી સેટઅપ."
   },
   {
     "id": "gallery-3",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
+    "src": "gallery2",
+    "thumbnail": "gallery2",
     "category": "Global Operations",
-    "title": "આંતરરાષ્ટ્રીય બિઝનેસ નેટવર્ક",
-    "description": "સરહદ પારના વ્યાપારી પરામર્શ, નિકાસ ક્ષમતાઓ અને વેપાર માર્ગો દર્શાવતો રાષ્ટ્રધ્વજ જોડાણનો ચિતાર."
+    "title": "રાષ્ટ્રીય ધ્વજ જોડાણ",
+    "description": "સરહદ પારના વ્યવસાયિક પરામર્શ, નિકાસ ક્ષમતાઓ અને વ્યાપારી માર્ગો દર્શાવતું વ્યાપારી પ્રતિનિધિત્વ."
   },
   {
-    "id": "gallery-4",
+    "id": "gallery-wind",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
-    "category": "Corporate Branding",
-    "title": "ડાર્ક થીમ એક્ઝિક્યુટિવ બ્રાન્ડમાર્ક",
-    "description": "એક્ઝિક્યુટિવ બ્રાન્ડિંગ, ઓફિસ પ્રવેશદ્વાર અને બોર્ડરૂમ પ્રદર્શન માટે પ્રીમિયમ ડાર્ક બેકગ્રાઉન્ડ પર સેટ કરેલો લોગો."
-  },
-  {
-    "id": "gallery-5",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
+    "src": "wind",
+    "thumbnail": "wind",
     "category": "Global Operations",
-    "title": "રાષ્ટ્રીય ધ્વજ ભાગીદારી",
-    "description": "મુખ્ય યુરોપીયન, એશિયન, અમેરિકન અને ગલ્ફ ભાગીદાર દેશો સાથેની વ્યૂહાત્મક ભાગીદારી દર્શાવતા વેપારી ધ્વજો."
+    "title": "પુનઃપ્રાપ્ય પવન ઊર્જા ઇન્ફ્રાસ્ટ્રક્ચર",
+    "description": "ટકાઉ ઉત્પાદન માટે ડિઝાઇન કરવામાં આવેલા ઉચ્ચ-પ્રાપ્ય પવન ઊર્જા EPC સેટઅપ."
   },
   {
-    "id": "gallery-6",
+    "id": "gallery-ev",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
-    "category": "Corporate Branding",
-    "title": "ઉચ્ચ રિઝોલ્યુશન પ્રતીક",
-    "description": "એકીકૃત પરામર્શ હેઠળ શહેરી માળખાકીય સુવિધાઓ અને વૈશ્વિક વેપારની ગતિશીલતા દર્શાવતું મુખ્ય પ્રતીક."
-  },
-  {
-    "id": "gallery-7",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
-    "category": "Global Operations",
-    "title": "વૈશ્વિક વેપાર કોરિડોર પ્રતિનિધિત્વ",
-    "description": "સ્થાનિક ઔદ્યોગિક કેન્દ્રોથી આંતરરાષ્ટ્રીય બજારો સુધી વર્લ્ડ એક્સપોર્ટની પહોંચ દર્શાવતો ચિતાર."
+    "src": "ev",
+    "thumbnail": "ev",
+    "category": "Logistics & Fleet",
+    "title": "એકીકૃત EV ચાર્જિંગ હબ",
+    "description": "આધુનિક ઔદ્યોગિક પાર્ક માટે પવન/સૌર ઊર્જા સેટઅપ સાથે સંકલિત સ્માર્ટ ચાર્જિંગ સ્ટેશનો."
   }
 ]

@@ -2,64 +2,46 @@
   {
     "id": "gallery-1",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
-    "category": "Corporate Branding",
-    "title": "Official Corporate Identity",
-    "description": "World Export Business Housing Centre logo representing global industrial reach and business integration."
-  },
-  {
-    "id": "gallery-2",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
+    "src": "gallery1",
+    "thumbnail": "gallery1",
     "category": "Logistics & Fleet",
     "title": "Corporate Transit Fleet Design",
     "description": "Modern vehicle wrapping and logistics design for domestic transport and industrial fleet management."
   },
   {
-    "id": "gallery-3",
+    "id": "gallery-2",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
+    "src": "gallery3",
+    "thumbnail": "gallery3",
     "category": "Global Operations",
     "title": "International Business Network",
-    "description": "Flag integration representation highlighting cross-border business consultancy, export capabilities, and trade routes."
+    "description": "Global collaborations and strategic trade setups facilitating domestic and international industrial growth."
   },
   {
-    "id": "gallery-4",
+    "id": "gallery-3",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
-    "category": "Corporate Branding",
-    "title": "Dark Theme Executive Brandmark",
-    "description": "Logo set against premium dark background for executive branding, office entrance, and boardroom displays."
-  },
-  {
-    "id": "gallery-5",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
+    "src": "gallery2",
+    "thumbnail": "gallery2",
     "category": "Global Operations",
     "title": "National Flag Collaborations",
-    "description": "Trade flags depicting strategic partnerships across key European, Asian, American, and Gulf partner countries."
+    "description": "Trade representation highlighting cross-border business consultancy, export capabilities, and trade routes."
   },
   {
-    "id": "gallery-6",
+    "id": "gallery-wind",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
-    "category": "Corporate Branding",
-    "title": "High Resolution Emblem",
-    "description": "Core emblem showcasing urban infrastructure and global trade dynamics under unified advisory."
-  },
-  {
-    "id": "gallery-7",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
+    "src": "wind",
+    "thumbnail": "wind",
     "category": "Global Operations",
-    "title": "Global Trade Corridor Representation",
-    "description": "Visualizing World Export's reach from the local industrial centers to international markets."
+    "title": "Renewable Wind Infrastructure",
+    "description": "High-efficiency industrial wind power EPC setups engineered for sustainable manufacturing."
+  },
+  {
+    "id": "gallery-ev",
+    "type": "image",
+    "src": "ev",
+    "thumbnail": "ev",
+    "category": "Logistics & Fleet",
+    "title": "Integrated EV Charging Hubs",
+    "description": "Smart charging stations integrated with wind/solar power setups for modern industrial parks."
   }
 ]

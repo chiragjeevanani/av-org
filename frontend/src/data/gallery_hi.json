@@ -2,64 +2,46 @@
   {
     "id": "gallery-1",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09.jpeg",
-    "category": "Corporate Branding",
-    "title": "आधिकारिक कॉर्पोरेट पहचान",
-    "description": "वर्ल्ड एक्सपोर्ट बिजनेस हाउसिंग सेंटर का लोगो जो वैश्विक औद्योगिक पहुंच और व्यापार एकीकरण का प्रतिनिधित्व करता है।"
+    "src": "gallery1",
+    "thumbnail": "gallery1",
+    "category": "Logistics & Fleet",
+    "title": "कॉर्पोरेट पारगमन बेड़े का डिज़ाइन",
+    "description": "घरेलू परिवहन और औद्योगिक बेड़े प्रबंधन के लिए आधुनिक वाहन रैपिंग और लॉजिस्टिक्स डिज़ाइन।"
   },
   {
     "id": "gallery-2",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.00.jpeg",
-    "category": "Logistics & Fleet",
-    "title": "कॉर्पोरेट पारगमन बेड़ा डिजाइन",
-    "description": "घरेलू परिवहन और औद्योगिक बेड़े प्रबंधन के लिए आधुनिक वाहन रैपिंग और लॉजिस्टिक्स डिजाइन।"
+    "src": "gallery3",
+    "thumbnail": "gallery3",
+    "category": "Global Operations",
+    "title": "अंतरराष्ट्रीय व्यापार नेटवर्क",
+    "description": "वैश्विक सहयोग और रणनीतिक व्यापार सेटअप जो घरेलू और अंतरराष्ट्रीय औद्योगिक विकास को बढ़ावा देते हैं।"
   },
   {
     "id": "gallery-3",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.09 (1).jpeg",
-    "category": "Global Operations",
-    "title": "अंतरराष्ट्रीय व्यापार नेटवर्क",
-    "description": "सीमा पार व्यापार परामर्श, निर्यात क्षमताओं और व्यापार मार्गों को उजागर करने वाला ध्वज एकीकरण प्रतिनिधित्व।"
-  },
-  {
-    "id": "gallery-4",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.51.59.jpeg",
-    "category": "Corporate Branding",
-    "title": "डार्क थीम एक्जीक्यूटिव ब्रांडमार्क",
-    "description": "कार्यकारी ब्रांडिंग, कार्यालय प्रवेश द्वार और बोर्डरूम डिस्प्ले के लिए प्रीमियम डार्क बैकग्राउंड पर सेट लोगो।"
-  },
-  {
-    "id": "gallery-5",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (1).jpeg",
+    "src": "gallery2",
+    "thumbnail": "gallery2",
     "category": "Global Operations",
     "title": "राष्ट्रीय ध्वज सहयोग",
-    "description": "प्रमुख यूरोपीय, एशियाई, अमेरिकी और खाड़ी भागीदार देशों में रणनीतिक साझेदारी को दर्शाने वाले व्यापार झंडे।"
+    "description": "सीमा पार व्यापार परामर्श, निर्यात क्षमताओं और व्यापार मार्गों को उजागर करने वाला व्यापार प्रतिनिधित्व।"
   },
   {
-    "id": "gallery-6",
+    "id": "gallery-wind",
     "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10 (2).jpeg",
-    "category": "Corporate Branding",
-    "title": "उच्च रिज़ॉल्यूशन प्रतीक",
-    "description": "एकीकृत परामर्श के तहत शहरी बुनियादी ढांचे और वैश्विक व्यापार गतिकी को प्रदर्शित करने वाला मुख्य प्रतीक।"
-  },
-  {
-    "id": "gallery-7",
-    "type": "image",
-    "src": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
-    "thumbnail": "/WhatsApp Image 2026-07-07 at 11.52.10.jpeg",
+    "src": "wind",
+    "thumbnail": "wind",
     "category": "Global Operations",
-    "title": "वैश्विक व्यापार गलियारा प्रतिनिधित्व",
-    "description": "स्थानीय औद्योगिक केंद्रों से अंतरराष्ट्रीय बाजारों तक वर्ल्ड एक्सपोर्ट की पहुंच की कल्पना करना।"
+    "title": "नवीकरणीय पवन बुनियादी ढांचा",
+    "description": "टिकाऊ विनिर्माण के लिए इंजीनियर की गई उच्च दक्षता वाली औद्योगिक पवन ऊर्जा ईपीसी सेटअप।"
+  },
+  {
+    "id": "gallery-ev",
+    "type": "image",
+    "src": "ev",
+    "thumbnail": "ev",
+    "category": "Logistics & Fleet",
+    "title": "एकीकृत ईवी चार्जिंग हब",
+    "description": "आधुनिक औद्योगिक पार्कों के लिए पवन/सौर ऊर्जा सेटअप के साथ एकीकृत स्मार्ट चार्जिंग स्टेशन।"
   }
 ]

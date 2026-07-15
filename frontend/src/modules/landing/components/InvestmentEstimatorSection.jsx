@@ -72,11 +72,11 @@ const InvestmentEstimatorSection = () => {
                   
                   {/* Slider Control */}
                   <div className="relative h-1.5 w-full bg-slate-200 rounded-full cursor-pointer flex items-center group/slider">
-                    <motion.div className="absolute left-0 h-full bg-[#0A2463] rounded-full" style={{ width: `${((projectCost - 85) / (350 - 85)) * 100}%` }} />
+                    <motion.div className="absolute left-0 h-full bg-[#0A2463] rounded-full" style={{ width: `${((projectCost - 85) / (1000 - 85)) * 100}%` }} />
                     <input 
                       type="range"
                       min="85"
-                      max="350"
+                      max="1000"
                       step="5"
                       value={projectCost}
                       onChange={handleSliderChange}
@@ -84,12 +84,12 @@ const InvestmentEstimatorSection = () => {
                     />
                     <div 
                       className="absolute top-1/2 -translate-y-1/2 w-8 h-8 bg-white border-[6px] border-[#0A2463] rounded-full shadow-lg pointer-events-none z-30 group-hover/slider:scale-110 transition-transform"
-                      style={{ left: `calc(${((projectCost - 85) / (350 - 85)) * 100}% - 16px)` }}
+                      style={{ left: `calc(${((projectCost - 85) / (1000 - 85)) * 100}% - 16px)` }}
                     />
                   </div>
                   <div className="flex justify-between mt-4 text-[9px] font-black uppercase text-slate-400 tracking-widest px-1">
                     <span>₹85 {lakhs}</span>
-                    <span>₹3.5 {crores}</span>
+                    <span>₹10 {crores}+</span>
                   </div>
                </div>
             </div>

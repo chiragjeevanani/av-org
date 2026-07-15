@@ -66,8 +66,8 @@ export default function Contact() {
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
                     {t('contact.hotline')}
                   </span>
-                  <a href="tel:9328650500" className="text-lg font-bold text-slate-800 hover:text-primary transition-colors block mt-0.5">
-                    +91 93286 50500
+                  <a href="tel:9978655799" className="text-lg font-bold text-slate-800 hover:text-primary transition-colors block mt-0.5">
+                    +91 99786 55799
                   </a>
                 </div>
               </div>

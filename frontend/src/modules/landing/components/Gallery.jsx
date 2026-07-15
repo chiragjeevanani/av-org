@@ -5,11 +5,37 @@ import { Card } from "../../../components/ui/card";
 import { Button } from "../../../components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "../../../components/ui/dialog";
 import { Play, ZoomIn, Eye, Image as ImageIcon, Video as VideoIcon } from "lucide-react";
+import gallery1 from "../../../assets/gallery1.jpeg";
+import gallery2 from "../../../assets/gallery2.jpeg";
+import gallery3 from "../../../assets/gallery3.jpeg.png";
+import windMillImg from "../../../assets/wind mill.jpeg";
+import evChargingImg from "../../../assets/ev chagng.jpeg";
 
 const categories = ["All Assets", "Corporate Branding", "Global Operations", "Logistics & Fleet"];
 
 export default function Gallery() {
   const { gallery: galleryData, t } = useLanguage();
+
+  const getAssetSrc = (item) => {
+    if (!item) return "";
+    if (item.id === "gallery-1") return gallery1;
+    if (item.id === "gallery-2") return gallery3;
+    if (item.id === "gallery-3") return gallery2;
+    if (item.id === "gallery-wind") return windMillImg;
+    if (item.id === "gallery-ev") return evChargingImg;
+    return item.src;
+  };
+
+  const getAssetThumbnail = (item) => {
+    if (!item) return "";
+    if (item.id === "gallery-1") return gallery1;
+    if (item.id === "gallery-2") return gallery3;
+    if (item.id === "gallery-3") return gallery2;
+    if (item.id === "gallery-wind") return windMillImg;
+    if (item.id === "gallery-ev") return evChargingImg;
+    return item.thumbnail;
+  };
+
   const [selectedCategory, setSelectedCategory] = useState("All Assets");
   const [activeItem, setActiveItem] = useState(null); // Item selected for lightbox
 
@@ -32,6 +58,24 @@ export default function Gallery() {
           <p className="text-slate-600 text-sm mt-3 leading-relaxed">
             {t('gallery.description')}
           </p>
+
+          {/* YouTube CTA Banner */}
+          <div className="mt-8 flex flex-col items-center space-y-3">
+            <a
+              href="https://www.youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 w-full sm:w-auto px-6 py-3.5 bg-white border border-slate-200 hover:border-[#F59E0B] text-slate-800 hover:text-[#0A2463] rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:scale-[1.03] hover:shadow-md cursor-pointer group justify-center"
+            >
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-[#FF0000] text-[#FF0000] shrink-0" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.507 9.387.507 9.387.507s7.517 0 9.387-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span>{t('gallery.youtubeBtn')}</span>
+            </a>
+            <p className="text-[11px] text-slate-400 font-medium leading-relaxed max-w-lg">
+              {t('gallery.youtubeCaption')}
+            </p>
+          </div>
         </div>
 
         {/* Filter buttons */}
@@ -70,7 +114,7 @@ export default function Gallery() {
                 >
                   {/* Thumbnail Image */}
                   <img
-                    src={item.thumbnail}
+                    src={getAssetThumbnail(item)}
                     alt={item.title}
                     loading="lazy"
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
@@ -137,7 +181,7 @@ export default function Gallery() {
                     />
                   ) : (
                     <img
-                      src={activeItem.src}
+                      src={getAssetSrc(activeItem)}
                       alt={activeItem.title}
                       className="w-full h-auto object-contain max-h-[75vh] rounded-t-xl"
                     />

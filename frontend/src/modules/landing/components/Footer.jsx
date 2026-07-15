@@ -65,7 +65,7 @@ export default function Footer() {
               Consultation Desk
             </h4>
             <p className="text-xs leading-relaxed text-slate-400">
-              Hotline: +91 93286 50500 <br />
+              Hotline: +91 99786 55799 <br />
               Email: info@worldexportbhc.com <br />
               Mon - Sat: 9:00 AM - 6:00 PM
             </p>

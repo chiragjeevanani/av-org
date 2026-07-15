@@ -19,7 +19,7 @@ export default function CTA() {
           Ready to Establish Your Industrial Footprint?
         </h2>
         <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-light">
-          Get in touch with our investment advisors to discuss land allocation, commercial feasibility reports, and structured bank loans between ₹85 Lakhs and ₹3.5 Crores.
+          Get in touch with our investment advisors to discuss land allocation, commercial feasibility reports, and structured bank loans between ₹85 Lakhs and ₹10 Crore+.
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">

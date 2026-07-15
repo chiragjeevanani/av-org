@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, ArrowRight, ShieldCheck } from 'lucide-react';
-import logoEmblem from '/WhatsApp Image 2026-07-07 at 11.51.59.jpeg';
+import logoEmblem from '../../../assets/logo.jpeg';
 import { useLanguage } from '../../../context/LanguageContext';
 
 const HeroSection = () => {
@@ -103,7 +103,7 @@ const HeroSection = () => {
             <div className="relative z-10 p-6 bg-white rounded-3xl border border-slate-100 shadow-2xl">
               <img
                 src={logoEmblem}
-                alt="World Export Emblem"
+                alt="AV Group Organization Management Emblem"
                 fetchPriority="high"
                 loading="eager"
                 decoding="async"

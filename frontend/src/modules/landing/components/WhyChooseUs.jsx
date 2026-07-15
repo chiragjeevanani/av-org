@@ -16,7 +16,7 @@ const reasonCards = [
   {
     icon: Compass,
     title: "Investment Guidance",
-    description: "Aligning your budget (₹85 Lakhs to ₹3.5 Crores) with sectors boasting high capacity utilization rates and robust regional demand patterns."
+    description: "Aligning your budget (₹85 Lakhs to ₹10 Crore+) with sectors boasting high capacity utilization rates and robust regional demand patterns."
   },
   {
     icon: Cpu,
