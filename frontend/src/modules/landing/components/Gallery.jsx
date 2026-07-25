@@ -11,28 +11,31 @@ import gallery3 from "../../../assets/gallery3.jpeg.png";
 import windMillImg from "../../../assets/wind mill.jpeg";
 import evChargingImg from "../../../assets/ev chagng.jpeg";
 
+import { useSettings } from "../../../context/SettingsContext";
+
 const categories = ["All Assets", "Corporate Branding", "Global Operations", "Logistics & Fleet"];
 
 export default function Gallery() {
   const { gallery: galleryData, t } = useLanguage();
+  const { settings } = useSettings();
 
   const getAssetSrc = (item) => {
     if (!item) return "";
-    if (item.id === "gallery-1") return gallery1;
-    if (item.id === "gallery-2") return gallery3;
-    if (item.id === "gallery-3") return gallery2;
-    if (item.id === "gallery-wind") return windMillImg;
-    if (item.id === "gallery-ev") return evChargingImg;
+    if (item.id === "gallery-1") return settings.galleryImages?.gallery1 || gallery1;
+    if (item.id === "gallery-2") return settings.galleryImages?.gallery2 || gallery3;
+    if (item.id === "gallery-3") return settings.galleryImages?.gallery3 || gallery2;
+    if (item.id === "gallery-wind") return settings.sectionImages?.windEnergy || windMillImg;
+    if (item.id === "gallery-ev") return settings.sectionImages?.evCharging || evChargingImg;
     return item.src;
   };
 
   const getAssetThumbnail = (item) => {
     if (!item) return "";
-    if (item.id === "gallery-1") return gallery1;
-    if (item.id === "gallery-2") return gallery3;
-    if (item.id === "gallery-3") return gallery2;
-    if (item.id === "gallery-wind") return windMillImg;
-    if (item.id === "gallery-ev") return evChargingImg;
+    if (item.id === "gallery-1") return settings.galleryImages?.gallery1 || gallery1;
+    if (item.id === "gallery-2") return settings.galleryImages?.gallery2 || gallery3;
+    if (item.id === "gallery-3") return settings.galleryImages?.gallery3 || gallery2;
+    if (item.id === "gallery-wind") return settings.sectionImages?.windEnergy || windMillImg;
+    if (item.id === "gallery-ev") return settings.sectionImages?.evCharging || evChargingImg;
     return item.thumbnail;
   };
 
@@ -62,7 +65,7 @@ export default function Gallery() {
           {/* YouTube CTA Banner */}
           <div className="mt-8 flex flex-col items-center space-y-3">
             <a
-              href="https://www.youtube.com"
+              href={settings.socialLinks?.youtube || "https://www.youtube.com"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 w-full sm:w-auto px-6 py-3.5 bg-white border border-slate-200 hover:border-[#F59E0B] text-slate-800 hover:text-[#0A2463] rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:scale-[1.03] hover:shadow-md cursor-pointer group justify-center"

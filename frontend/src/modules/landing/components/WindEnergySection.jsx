@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Globe, Settings, TrendingUp, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../../context/LanguageContext';
+import { useSettings } from '../../../context/SettingsContext';
 import { Card, CardContent } from '../../../components/ui/card';
 import windMillImg from "../../../assets/wind mill.jpeg";
 
 export default function WindEnergySection() {
   const { t } = useLanguage();
+  const { settings } = useSettings();
 
   const handleScroll = (e, href) => {
     e.preventDefault();
@@ -148,7 +150,7 @@ export default function WindEnergySection() {
               className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-slate-150 shadow-lg bg-slate-50 group"
             >
               <img
-                src={windMillImg}
+                src={settings.sectionImages?.windEnergy || windMillImg}
                 alt="Wind Turbines Landscape"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />

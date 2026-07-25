@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f8fafc; color: #1e293b; }
+    .container { max-width: 600px; margin: 24px auto; background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    .header { background: #0A2463; padding: 24px; text-align: center; border-bottom: 3px solid #F59E0B; }
+    .header h1 { color: #ffffff; margin: 0; font-size: 20px; font-weight: 800; letter-spacing: 0.5px; }
+    .header p { color: #F59E0B; margin: 4px 0 0 0; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .content { padding: 32px 24px; }
+    .footer { background: #f1f5f9; padding: 20px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0; }
+    .footer p { margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>{{companyDisplayName}}</h1>
+      <p>Engineering & Energy Advisory Solutions</p>
+    </div>
+    <div class="content">
+      {{bodyContent}}
+    </div>
+    <div class="footer">
+      <p><strong>{{companyDisplayName}}</strong></p>
+      <p>{{emailSignature}}</p>
+      <p style="margin-top: 8px; font-size: 10px; color: #94a3b8;">This is an official communication sent via AV Group Web Platform.</p>
+    </div>
+  </div>
+</body>
+</html>

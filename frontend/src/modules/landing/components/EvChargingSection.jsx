@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, BarChart3, Car, Activity, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../../../context/LanguageContext';
+import { useSettings } from '../../../context/SettingsContext';
 import { Card, CardContent } from '../../../components/ui/card';
 import evChargingImg from "../../../assets/ev chagng.jpeg";
 
 export default function EvChargingSection() {
   const { t } = useLanguage();
+  const { settings } = useSettings();
 
   const handleScroll = (e, href) => {
     e.preventDefault();
@@ -56,7 +58,7 @@ export default function EvChargingSection() {
               className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-slate-150 shadow-lg bg-slate-50 group flex items-center justify-center"
             >
               <img
-                src={evChargingImg}
+                src={settings.sectionImages?.evCharging || evChargingImg}
                 alt="EV Charging Station Render"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />

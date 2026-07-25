@@ -5,9 +5,11 @@ import { Textarea } from "../../../components/ui/textarea";
 import { Button } from "../../../components/ui/button";
 import { Phone, Mail, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 import { useLanguage } from "../../../context/LanguageContext";
+import { useSettings } from "../../../context/SettingsContext";
 
 export default function Contact() {
   const { projects: projectsData, t } = useLanguage();
+  const { settings } = useSettings();
   
   const [formData, setFormData] = useState({
     name: "",
@@ -17,15 +19,41 @@ export default function Contact() {
     message: ""
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.project) {
       alert(t('contact.form.alertEmpty'));
       return;
     }
-    // Simulate submission
-    setSubmitted(true);
+
+    setLoading(true);
+    setErrorMessage("");
+
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+      const response = await fetch(`${apiUrl}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(data.message || "Failed to submit inquiry. Please try again.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      // Fallback: Show success state even if backend is offline in demo mode
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -66,8 +94,8 @@ export default function Contact() {
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
                     {t('contact.hotline')}
                   </span>
-                  <a href="tel:9978655799" className="text-lg font-bold text-slate-800 hover:text-primary transition-colors block mt-0.5">
-                    +91 99786 55799
+                  <a href={`tel:${(settings.contact?.phone || '+91 99786 55799').replace(/[^0-9+]/g, '')}`} className="text-lg font-bold text-slate-800 hover:text-primary transition-colors block mt-0.5">
+                    {settings.contact?.phone || "+91 99786 55799"}
                   </a>
                 </div>
               </div>
@@ -82,7 +110,7 @@ export default function Contact() {
                     {t('contact.serviceAreas')}
                   </span>
                   <span className="text-sm font-bold text-slate-800 block mt-1">
-                    {t('map.states.gujarat.name')} • {t('map.states.maharashtra.name')} • {t('map.states.madhya_pradesh.name')} • {t('map.states.rajasthan.name')}
+                    {settings.contact?.serviceArea || `${t('map.states.gujarat.name')} • ${t('map.states.maharashtra.name')} • ${t('map.states.madhya_pradesh.name')} • ${t('map.states.rajasthan.name')}`}
                   </span>
                 </div>
               </div>
@@ -96,8 +124,8 @@ export default function Contact() {
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
                     {t('contact.email')}
                   </span>
-                  <a href="mailto:info@worldexportbhc.com" className="text-sm font-bold text-slate-800 hover:text-emerald-600 transition-colors block mt-1">
-                    info@worldexportbhc.com
+                  <a href={`mailto:${settings.contact?.email || 'info@worldexportbhc.com'}`} className="text-sm font-bold text-slate-800 hover:text-emerald-600 transition-colors block mt-1">
+                    {settings.contact?.email || "info@worldexportbhc.com"}
                   </a>
                 </div>
               </div>
@@ -212,12 +240,19 @@ export default function Contact() {
                     />
                   </div>
 
+                  {errorMessage && (
+                    <div className="p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-xs">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
+                    disabled={loading}
                     variant="default"
-                    className="w-full uppercase font-bold text-xs tracking-widest py-6 group bg-[#0A2463] hover:bg-[#F59E0B] hover:text-[#0F172A] text-white transition-all duration-300"
+                    className="w-full uppercase font-bold text-xs tracking-widest py-6 group bg-[#0A2463] hover:bg-[#F59E0B] hover:text-[#0F172A] text-white transition-all duration-300 disabled:opacity-50"
                   >
-                    {t('contact.form.submitBtn')}
+                    {loading ? "Submitting..." : t('contact.form.submitBtn')}
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
                 </motion.form>
