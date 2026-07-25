@@ -165,14 +165,24 @@ export default function WebsiteSettings() {
   };
 
   const handleNestedChange = (section, field, value) => {
-    setFormData(prev => ({
-      ...prev,
-      [section]: {
-        ...prev[section],
-        [field]: value
+    setFormData(prev => {
+      const updated = {
+        ...prev,
+        [section]: {
+          ...prev[section],
+          [field]: value
+        }
+      };
+      // Auto-sync supportPhone and contact.phone so both admin form sections update dynamically
+      if (section === 'emailSettings' && field === 'supportPhone') {
+        updated.contact = { ...updated.contact, phone: value };
+      } else if (section === 'contact' && field === 'phone') {
+        updated.emailSettings = { ...updated.emailSettings, supportPhone: value };
       }
-    }));
+      return updated;
+    });
   };
+
 
   if (loading) {
     return (

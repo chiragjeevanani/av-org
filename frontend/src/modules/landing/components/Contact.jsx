@@ -95,8 +95,8 @@ export default function Contact() {
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
                     {t('contact.hotline')}
                   </span>
-                  <a href={`tel:${(settings.contact?.phone || '+91 99786 55799').replace(/[^0-9+]/g, '')}`} className="text-lg font-bold text-slate-800 hover:text-primary transition-colors block mt-0.5">
-                    {settings.contact?.phone || "+91 99786 55799"}
+                  <a href={`tel:${(settings.contact?.phone || settings.emailSettings?.supportPhone || '+91 99786 55799').replace(/[^0-9+]/g, '')}`} className="text-lg font-bold text-slate-800 hover:text-primary transition-colors block mt-0.5">
+                    {settings.contact?.phone || settings.emailSettings?.supportPhone || "+91 99786 55799"}
                   </a>
                 </div>
               </div>
@@ -125,11 +125,12 @@ export default function Contact() {
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">
                     {t('contact.email')}
                   </span>
-                  <a href={`mailto:${settings.contact?.email || 'info@worldexportbhc.com'}`} className="text-sm font-bold text-slate-800 hover:text-emerald-600 transition-colors block mt-1">
-                    {settings.contact?.email || "info@worldexportbhc.com"}
+                  <a href={`mailto:${settings.contact?.email || settings.emailSettings?.receiverEmail || 'info@worldexportbhc.com'}`} className="text-sm font-bold text-slate-800 hover:text-emerald-600 transition-colors block mt-1">
+                    {settings.contact?.email || settings.emailSettings?.receiverEmail || "info@worldexportbhc.com"}
                   </a>
                 </div>
               </div>
+
 
             </div>
 
