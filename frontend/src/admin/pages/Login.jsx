@@ -5,8 +5,8 @@ import { Lock, Mail, ArrowRight, ShieldCheck, Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export default function Login() {
-  const [email, setEmail] = useState('avgroup284@gmail.com');
-  const [password, setPassword] = useState('avgroupadmin123@');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
@@ -45,7 +45,7 @@ export default function Login() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
           <div>
             <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1.5">
               Email Address
@@ -57,6 +57,7 @@ export default function Login() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                autoComplete="off"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500 transition-colors"
                 placeholder="admin@avgroup.com"
               />
@@ -74,6 +75,7 @@ export default function Login() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="new-password"
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-10 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500 transition-colors"
                 placeholder="••••••••"
               />
@@ -103,14 +105,8 @@ export default function Login() {
             )}
           </button>
         </form>
-
-        <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 text-center">
-          <p className="text-[11px] text-slate-500 flex items-center justify-center space-x-1.5">
-            <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-            <span>Default Seed Credentials Pre-filled</span>
-          </p>
-        </div>
       </div>
     </div>
   );
 }
+

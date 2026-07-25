@@ -45,9 +45,35 @@ export const getPublicSettings = async (req, res) => {
       }
     });
   } catch (error) {
-    return res.status(500).json({ success: false, message: error.message });
+    console.error('[Public Settings Error] Returning fallback settings:', error.message);
+    return res.status(200).json({
+      success: true,
+      settings: {
+        companyName: 'AV Group Organization',
+        footerDescription: 'Leading provider of sustainable clean energy, wind engineering, EV charging infrastructure and MSME advisory solutions.',
+        logo: '',
+        footerLogo: '',
+        sectionImages: { windEnergy: '', evCharging: '' },
+        galleryImages: { gallery1: '', gallery2: '', gallery3: '' },
+        emailSettings: {
+          receiverEmail: 'avgroup284@gmail.com',
+          replyEmail: 'avgroup284@gmail.com',
+          companyDisplayName: 'AV Group Organization Management',
+          signature: 'AV Group Organization Executive Team',
+          supportPhone: '+91 99786 55799'
+        },
+        contact: {
+          phone: '+91 99786 55799',
+          email: 'info@worldexportbhc.com',
+          serviceArea: 'Gujarat • Maharashtra • Madhya Pradesh • Rajasthan',
+          address: 'Gujarat, India'
+        },
+        socialLinks: { facebook: '', twitter: '', linkedin: '', youtube: '' }
+      }
+    });
   }
 };
+
 
 // GET /api/settings — Admin settings fetch endpoint
 export const getSettings = async (req, res) => {
