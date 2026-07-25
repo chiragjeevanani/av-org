@@ -91,42 +91,22 @@ export const getSettings = async (req, res) => {
 // PUT /api/settings — Protected Admin update endpoint
 export const updateSettings = async (req, res) => {
   try {
-    let settings = await Settings.findOne();
-    if (!settings) {
-      settings = new Settings(req.body);
-    } else {
-      if (req.body.companyName !== undefined) settings.companyName = req.body.companyName;
-      if (req.body.footerDescription !== undefined) settings.footerDescription = req.body.footerDescription;
-      if (req.body.logo !== undefined) settings.logo = req.body.logo;
-      if (req.body.footerLogo !== undefined) settings.footerLogo = req.body.footerLogo;
+    const settings = await Settings.findOneAndUpdate(
+      {},
+      { $set: req.body },
+      { new: true, upsert: true, runValidators: true }
+    );
 
-      if (req.body.sectionImages) {
-        settings.sectionImages = { ...settings.sectionImages, ...req.body.sectionImages };
-      }
-      if (req.body.galleryImages) {
-        settings.galleryImages = { ...settings.galleryImages, ...req.body.galleryImages };
-      }
-      if (req.body.emailSettings) {
-        settings.emailSettings = { ...settings.emailSettings, ...req.body.emailSettings };
-      }
-      if (req.body.contact) {
-        settings.contact = { ...settings.contact, ...req.body.contact };
-      }
-      if (req.body.socialLinks) {
-        settings.socialLinks = { ...settings.socialLinks, ...req.body.socialLinks };
-      }
-    }
-    await settings.save();
-
-    // Create Notification document for Settings update
+    // Emit Socket.IO real-time event for instant website update
     const io = req.app.get('io');
     if (io) {
       io.emit('notification:new', {
         title: 'Website Settings Updated',
-        message: 'Admin updated website, gallery & section image settings.',
+        message: 'Admin updated website, contact & email dispatch settings.',
         type: 'SETTINGS',
         createdAt: new Date()
       });
+      io.emit('settings:updated', settings);
     }
 
     return res.status(200).json({
@@ -138,3 +118,4 @@ export const updateSettings = async (req, res) => {
     return res.status(500).json({ success: false, message: error.message });
   }
 };
+

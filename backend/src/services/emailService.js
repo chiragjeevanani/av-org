@@ -28,14 +28,25 @@ const loadTemplate = (templateName, variables = {}) => {
 };
 
 const getEmailConfig = async () => {
-  const settings = await Settings.findOne();
-  return {
-    receiverEmail: settings?.emailSettings?.receiverEmail || process.env.INQUIRY_RECEIVER_EMAIL || 'avgroup284@gmail.com',
-    replyEmail: settings?.emailSettings?.replyEmail || 'avgroup284@gmail.com',
-    companyDisplayName: settings?.emailSettings?.companyDisplayName || 'AV Group Organization Management',
-    signature: settings?.emailSettings?.signature || 'AV Group Organization Executive Team',
-    supportPhone: settings?.emailSettings?.supportPhone || settings?.contact?.phone || '+91 99786 55799'
-  };
+  try {
+    const settings = await Settings.findOne().maxTimeMS(3000);
+    return {
+      receiverEmail: settings?.emailSettings?.receiverEmail || process.env.INQUIRY_RECEIVER_EMAIL || 'avgroup284@gmail.com',
+      replyEmail: settings?.emailSettings?.replyEmail || 'avgroup284@gmail.com',
+      companyDisplayName: settings?.emailSettings?.companyDisplayName || 'AV Group Organization Management',
+      signature: settings?.emailSettings?.signature || 'AV Group Organization Executive Team',
+      supportPhone: settings?.emailSettings?.supportPhone || settings?.contact?.phone || '+91 99786 55799'
+    };
+  } catch (err) {
+    console.warn('[EmailService] Could not load dynamic settings, using fallback email config:', err.message);
+    return {
+      receiverEmail: process.env.INQUIRY_RECEIVER_EMAIL || 'avgroup284@gmail.com',
+      replyEmail: 'avgroup284@gmail.com',
+      companyDisplayName: 'AV Group Organization Management',
+      signature: 'AV Group Organization Executive Team',
+      supportPhone: '+91 99786 55799'
+    };
+  }
 };
 
 export const sendInquiryNotification = async (inquiryData) => {
@@ -59,7 +70,7 @@ export const sendInquiryNotification = async (inquiryData) => {
       auth: { user: smtpUser, pass: smtpPass }
     });
 
-    const htmlContent = loadTemplate('inquiryNotification', {
+    const adminHtml = loadTemplate('inquiryNotification', {
       name,
       phone,
       email: email || 'N/A',
@@ -69,47 +80,56 @@ export const sendInquiryNotification = async (inquiryData) => {
       emailSignature: config.signature
     });
 
-    // 1. Send Notification Email to Admin
-    const info = await transporter.sendMail({
+    // 1. Send Admin Notification Email
+    const adminMailPromise = transporter.sendMail({
       from: `"${config.companyDisplayName}" <${smtpUser}>`,
       to: config.receiverEmail,
-      replyTo: email || undefined,
+      replyTo: (email && email.trim()) ? email.trim() : undefined,
       subject: `⚡ New Inquiry: ${project} - ${name}`,
-      html: htmlContent
+      html: adminHtml
     });
 
-    console.log(`[EmailService] Admin notification email sent to ${config.receiverEmail}. MessageId: ${info.messageId}`);
-
-    // 2. Send Auto Thank-You Email to Customer (if customer email exists)
+    // 2. Send Customer Auto Thank-You Email if customer email was provided
+    let customerMailPromise = Promise.resolve(null);
     if (email && email.trim()) {
-      try {
-        const thankYouHtml = loadTemplate('thankYou', {
-          name,
-          phone,
-          project,
-          companyDisplayName: config.companyDisplayName,
-          emailSignature: config.signature,
-          supportPhone: config.supportPhone
-        });
+      const thankYouHtml = loadTemplate('thankYou', {
+        name,
+        phone,
+        project,
+        companyDisplayName: config.companyDisplayName,
+        emailSignature: config.signature,
+        supportPhone: config.supportPhone
+      });
 
-        const thankYouInfo = await transporter.sendMail({
-          from: `"${config.companyDisplayName}" <${smtpUser}>`,
-          to: email.trim(),
-          subject: `Thank you for contacting ${config.companyDisplayName}`,
-          html: thankYouHtml
-        });
-        console.log(`[EmailService] Auto Thank-You email sent to customer (${email.trim()}). MessageId: ${thankYouInfo.messageId}`);
-      } catch (tyError) {
-        console.error(`[EmailService] Error sending Thank-You email to customer (${email}):`, tyError.message);
-      }
+      customerMailPromise = transporter.sendMail({
+        from: `"${config.companyDisplayName}" <${smtpUser}>`,
+        to: email.trim(),
+        subject: `Thank you for contacting ${config.companyDisplayName}`,
+        html: thankYouHtml
+      });
     }
 
-    return { success: true, messageId: info.messageId };
+    const [adminResult, customerResult] = await Promise.allSettled([adminMailPromise, customerMailPromise]);
+
+    if (adminResult.status === 'fulfilled') {
+      console.log(`[EmailService] Admin notification email sent to ${config.receiverEmail}. MessageId: ${adminResult.value.messageId}`);
+    } else {
+      console.error(`[EmailService] Admin notification email failed:`, adminResult.reason?.message);
+    }
+
+    if (customerResult.status === 'fulfilled' && customerResult.value) {
+      console.log(`[EmailService] Auto Thank-You email sent to customer (${email.trim()}). MessageId: ${customerResult.value.messageId}`);
+    } else if (customerResult.status === 'rejected') {
+      console.error(`[EmailService] Customer Thank-You email failed:`, customerResult.reason?.message);
+    }
+
+    return { success: true };
   } catch (error) {
-    console.error(`[EmailService] Error sending notification email:`, error);
+    console.error(`[EmailService] Error sending notification email:`, error.message);
     return { success: false, error: error.message };
   }
 };
+
 
 export const sendThankYouEmail = async (inquiryData, customConfig = null) => {
   const { name, phone, email, project } = inquiryData;
