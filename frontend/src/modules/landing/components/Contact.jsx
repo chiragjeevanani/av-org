@@ -33,7 +33,8 @@ export default function Contact() {
     setErrorMessage("");
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+      const rawApiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+      const apiUrl = rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl.replace(/\/$/, '')}/api`;
       const response = await fetch(`${apiUrl}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

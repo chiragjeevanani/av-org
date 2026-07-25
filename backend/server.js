@@ -57,6 +57,8 @@ const getParsedAllowedOrigins = () => {
   const defaultOrigins = [
     process.env.FRONTEND_URL,
     process.env.ADMIN_URL,
+    'https://www.avgrouporganization.com',
+    'https://avgrouporganization.com',
     'http://localhost:5173',
     'http://localhost:5174',
     'http://localhost:3000',
@@ -64,8 +66,19 @@ const getParsedAllowedOrigins = () => {
     'http://127.0.0.1:5174'
   ].filter(Boolean);
 
-  return Array.from(new Set([...envOrigins, ...defaultOrigins]));
+  const originsSet = new Set([...envOrigins, ...defaultOrigins]);
+
+  originsSet.forEach(origin => {
+    if (origin.startsWith('https://www.')) {
+      originsSet.add(origin.replace('https://www.', 'https://'));
+    } else if (origin.startsWith('https://')) {
+      originsSet.add(origin.replace('https://', 'https://www.'));
+    }
+  });
+
+  return Array.from(originsSet);
 };
+
 
 const io = new Server(server, {
   cors: {

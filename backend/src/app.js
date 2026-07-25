@@ -28,6 +28,8 @@ const getParsedAllowedOrigins = () => {
   const defaultOrigins = [
     process.env.FRONTEND_URL,
     process.env.ADMIN_URL,
+    'https://www.avgrouporganization.com',
+    'https://avgrouporganization.com',
     'http://localhost:5173',
     'http://localhost:5174',
     'http://localhost:3000',
@@ -35,22 +37,41 @@ const getParsedAllowedOrigins = () => {
     'http://127.0.0.1:5174'
   ].filter(Boolean);
 
-  return Array.from(new Set([...envOrigins, ...defaultOrigins]));
+  const originsSet = new Set([...envOrigins, ...defaultOrigins]);
+
+  originsSet.forEach(origin => {
+    if (origin.startsWith('https://www.')) {
+      originsSet.add(origin.replace('https://www.', 'https://'));
+    } else if (origin.startsWith('https://')) {
+      originsSet.add(origin.replace('https://', 'https://www.'));
+    }
+  });
+
+  return Array.from(originsSet);
 };
 
 app.use(cors({
   origin: (origin, callback) => {
-    const allowedOrigins = getParsedAllowedOrigins();
-    if (!origin) return callback(null, true); // Allow server-to-server or non-browser requests (e.g., Postman)
+    if (!origin) return callback(null, true);
 
-    if (allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+    const allowedOrigins = getParsedAllowedOrigins();
+    const isAllowed =
+      allowedOrigins.includes('*') ||
+      allowedOrigins.includes(origin) ||
+      origin.endsWith('.vercel.app') ||
+      origin.includes('avgrouporganization.com') ||
+      process.env.NODE_ENV !== 'production';
+
+    if (isAllowed) {
       return callback(null, true);
     }
 
-    return callback(new Error(`CORS error: Origin '${origin}' is not allowed by CORS policy.`));
+    console.warn(`[CORS Warning] Origin denied: ${origin}`);
+    return callback(null, false);
   },
   credentials: true
 }));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
