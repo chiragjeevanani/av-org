@@ -137,7 +137,7 @@ const FooterSection = () => {
           <div className="hidden md:block">
             <h4 className="font-bold font-heading text-slate-900 mb-6 text-sm">{t('footer.advisoryDesk')}</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
+              <li className="flex items-[#F59E0B] items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" />
                 <span className="text-slate-600 text-xs leading-relaxed font-semibold">
                   {settings.contact?.serviceArea || t('footer.serviceAreaLabel')}
@@ -145,16 +145,17 @@ const FooterSection = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#F59E0B] shrink-0" />
-                <a href={`tel:${(settings.contact?.phone || '+91 99786 55799').replace(/[^0-9+]/g, '')}`} className="text-slate-600 text-xs font-bold hover:text-[#0A2463] transition-colors">
-                  {settings.contact?.phone || '+91 99786 55799'}
+                <a href={`tel:${(settings.contact?.phone || settings.emailSettings?.supportPhone || '+91 99786 55799').replace(/[^0-9+]/g, '')}`} className="text-slate-600 text-xs font-bold hover:text-[#0A2463] transition-colors">
+                  {settings.contact?.phone || settings.emailSettings?.supportPhone || '+91 99786 55799'}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#F59E0B] shrink-0" />
-                <a href={`mailto:${settings.contact?.email || 'info@worldexportbhc.com'}`} className="text-slate-600 text-xs font-bold hover:text-[#0A2463] transition-colors">
-                  {settings.contact?.email || 'info@worldexportbhc.com'}
+                <a href={`mailto:${settings.contact?.email || settings.emailSettings?.receiverEmail || 'info@worldexportbhc.com'}`} className="text-slate-600 text-xs font-bold hover:text-[#0A2463] transition-colors">
+                  {settings.contact?.email || settings.emailSettings?.receiverEmail || 'info@worldexportbhc.com'}
                 </a>
               </li>
+
             </ul>
           </div>
 
