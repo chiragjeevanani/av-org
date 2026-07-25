@@ -10,7 +10,10 @@ import Admin from './src/models/Admin.js';
 const validateEnvironment = () => {
   const isProduction = process.env.NODE_ENV === 'production';
 
-  const criticalVars = ['JWT_SECRET', 'REFRESH_TOKEN_SECRET'];
+  const criticalVars = ['JWT_SECRET'];
+  if (!process.env.JWT_REFRESH_SECRET && !process.env.REFRESH_TOKEN_SECRET) {
+    criticalVars.push('JWT_REFRESH_SECRET');
+  }
   const productionVars = [
     'MONGODB_URI',
     'CLOUDINARY_CLOUD_NAME',

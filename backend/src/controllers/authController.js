@@ -9,19 +9,25 @@ const getJwtSecret = () => {
 };
 
 const getRefreshSecret = () => {
-  if (!process.env.REFRESH_TOKEN_SECRET) {
-    throw new Error('REFRESH_TOKEN_SECRET is missing from environment variables');
+  const secret = process.env.JWT_REFRESH_SECRET || process.env.REFRESH_TOKEN_SECRET;
+  if (!secret) {
+    throw new Error('JWT_REFRESH_SECRET is missing from environment variables');
   }
-  return process.env.REFRESH_TOKEN_SECRET;
+  return secret;
 };
 
 const generateAccessToken = (id) => {
-  return jwt.sign({ id: id.toString() }, getJwtSecret(), { expiresIn: '1h' });
+  return jwt.sign({ id: id.toString() }, getJwtSecret(), {
+    expiresIn: process.env.JWT_EXPIRES_IN || '1d'
+  });
 };
 
 const generateRefreshToken = (id) => {
-  return jwt.sign({ id: id.toString() }, getRefreshSecret(), { expiresIn: '7d' });
+  return jwt.sign({ id: id.toString() }, getRefreshSecret(), {
+    expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d'
+  });
 };
+
 
 export const loginAdmin = async (req, res) => {
   try {
